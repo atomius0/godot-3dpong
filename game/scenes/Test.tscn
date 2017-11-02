@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scenes/imported/pong_scene.scn" type="PackedScene" id=1]
+
+[node name="Test" type="Spatial"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="pong_scene" parent="." instance=ExtResource( 1 )]
+
+
