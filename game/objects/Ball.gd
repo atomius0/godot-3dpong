@@ -1,9 +1,5 @@
 extends KinematicBody
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
 var velocity = Vector3(0.2, 0.0, 0.5)
 
 func _ready():
