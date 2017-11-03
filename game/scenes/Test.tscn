@@ -12,15 +12,15 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 editor/display_folded = true
 
+[node name="shape" parent="pong_scene/Walls/Back Wall/col"]
+
+_update_shape_index = 0
+
 [node name="shape" parent="pong_scene/Walls/Bottom Wall/col"]
 
 _update_shape_index = 0
 
-[node name="shape" parent="pong_scene/Walls/North Wall/col"]
-
-_update_shape_index = 0
-
-[node name="shape" parent="pong_scene/Walls/South Wall/col"]
+[node name="shape" parent="pong_scene/Walls/Front Wall/col"]
 
 _update_shape_index = 0
 
@@ -31,7 +31,7 @@ _update_shape_index = 0
 [node name="Camera" type="Camera" parent="."]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 65, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 65 )
 projection = 0
 fov = 65.0
 near = 0.1
@@ -51,7 +51,6 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 [node name="DirectionalLight" type="DirectionalLight" parent="Lights"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 layers = 1
 params/enabled = true
 params/editor_only = false
@@ -75,7 +74,7 @@ shadow/zoffset_scale = 2.0
 [node name="DirectionalLight1" type="DirectionalLight" parent="Lights"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+transform/local = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 layers = 1
 params/enabled = true
 params/editor_only = false
@@ -119,7 +118,7 @@ params/attenuation = 1.0
 
 [node name="SquarePaddle" parent="." instance=ExtResource( 2 )]
 
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8758, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32 )
 
 [node name="Ball" parent="." instance=ExtResource( 3 )]
 

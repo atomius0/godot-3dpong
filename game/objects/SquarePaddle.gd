@@ -16,8 +16,7 @@ func _input(event):
 
 func _fixed_process(delta):
 	print(movement)
-	# we should move along the x and y axis, but the meshes are all sideways, so we use z and y... TODO: FIX THIS!
-	move(Vector3(0.0, -movement.y, -movement.x) * .1)
+	move(Vector3(movement.x, -movement.y, 0.0) * .1)
 	movement = Vector2() # set to zero
 #	# TODO: mouse movement
 #	pass

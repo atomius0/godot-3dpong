@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var velocity = Vector3(0.2, 0.0, 0.5)
+var velocity = Vector3(0.1, 0.4, 0.3)
 
 func _ready():
 	set_fixed_process(true)
