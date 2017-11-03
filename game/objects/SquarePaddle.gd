@@ -16,7 +16,11 @@ func _input(event):
 
 func _fixed_process(delta):
 	print(movement)
-	move(Vector3(movement.x, -movement.y, 0.0) * .1)
+	var rest = move(Vector3(movement.x, -movement.y, 0.0) * .1)
+	if is_colliding():
+		#move(rest.slide(get_collision_normal()))
+		move(get_collision_normal().slide(rest))
+		
 	movement = Vector2() # set to zero
 #	# TODO: mouse movement
 #	pass
