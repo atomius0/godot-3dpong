@@ -1,0 +1,11 @@
+- turn all meshes around (in blend file, and re-export), so the front is actually the front...
+- fix everything related to that rotation
+
+- mouse cursor is not hidden when captured.
+- no way to exit game when mouse is captured. add global quit hotkey (alt+F4? escape?)
+
+- use delta time in _process and _fixed_process.
+
+- write down feature list/plan.
+
+- use a child object "inputHandler" for handling input? implement a method "InputHandler.GetMovement" for querying movement. (maybe implement AI like this, too.)
