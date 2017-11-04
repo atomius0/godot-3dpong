@@ -1,7 +1,11 @@
 [x]- turn all meshes around (in blend file, and re-export), so the front is actually the front...
 [x]- fix everything related to that rotation
 
-- attach camera to paddle
+[x]- attach camera to paddle
+
+- fix wall measurements in blend file! (see Position3D objects in godot test scene)
+
+- try reimplementing all collision code... handle paddle-collisions manually (or maybe all collisions?)
 
 - mouse cursor is not hidden when captured.
 - no way to exit game when mouse is captured. add global quit hotkey (alt+F4? escape?)
@@ -30,5 +34,3 @@ https://www.youtube.com/watch?v=Kb6JU00DDxk
 - the shitty hack was inspired by the "Kinematic Character 3D" demo, file: "cubio.gd" @ line 54+
 
 - accurate_move(): what about the vector by which we slide? should we use the last one after the while loop? or the one returned by the first call to move()?
-
-- try reimplementing all collision code... handle paddle-collisions manually (or maybe all collisions?)
