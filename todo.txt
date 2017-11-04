@@ -1,11 +1,34 @@
-- turn all meshes around (in blend file, and re-export), so the front is actually the front...
-- fix everything related to that rotation
+[x]- turn all meshes around (in blend file, and re-export), so the front is actually the front...
+[x]- fix everything related to that rotation
+
+- attach camera to paddle
 
 - mouse cursor is not hidden when captured.
 - no way to exit game when mouse is captured. add global quit hotkey (alt+F4? escape?)
+
+- the position where the ball hits the paddle should influence the reflection angle. (use an anchor, like in that one godot breakout example by heartbeast. will will then be able to change the influence the paddle has over the ball by moving the empty object closer or further away.)
+
+[Godot Tutorial] Basic Breakout! [P3] Instancing
+https://www.youtube.com/watch?v=Kb6JU00DDxk
+@ 05:15
+
+- implement CPU opponent paddle. (same base object as player paddle, but different script.)
+
+- after implementing the CPU paddle, try the InputHandler idea below.
+
+- use a child object "inputHandler" for handling input? implement a method "InputHandler.GetMovement" for querying movement. (maybe implement AI like this, too.)
 
 - use delta time in _process and _fixed_process.
 
 - write down feature list/plan.
 
-- use a child object "inputHandler" for handling input? implement a method "InputHandler.GetMovement" for querying movement. (maybe implement AI like this, too.)
+- add side-view cameras (make a mockup first?)
+
+[x]- try fixing the wall-collision bug later, when another input method is implemented.
+- fixed wall-collision bug, using a shitty hack. clean it up next!
+
+- the shitty hack was inspired by the "Kinematic Character 3D" demo, file: "cubio.gd" @ line 54+
+
+- accurate_move(): what about the vector by which we slide? should we use the last one after the while loop? or the one returned by the first call to move()?
+
+- try reimplementing all collision code... handle paddle-collisions manually (or maybe all collisions?)
