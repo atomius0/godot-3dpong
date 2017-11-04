@@ -1,11 +1,14 @@
 [x]- turn all meshes around (in blend file, and re-export), so the front is actually the front...
 [x]- fix everything related to that rotation
-
 [x]- attach camera to paddle
-
-- fix wall measurements in blend file! (see Position3D objects in godot test scene)
+[x]- fix wall measurements in blend file! (see Position3D objects in godot test scene)
 
 - try reimplementing all collision code... handle paddle-collisions manually (or maybe all collisions?)
+	- the Ball will be a RigidBody in Character mode, because we need get_colliding_bodies() and set_linear_velocity() (like in HeartBeast's Breakout tutorial.)
+	or use kinematic mode? will get_colliding_bodies() still work, then?
+	- Walls will be kept as StaticBodies
+	- Paddle will be a KinematicBody, but it will be moved with set_pos() so the paddle will be unstoppable by the ball.
+~
 
 - mouse cursor is not hidden when captured.
 - no way to exit game when mouse is captured. add global quit hotkey (alt+F4? escape?)
