@@ -122,5 +122,25 @@ v_offset = 0.0
 
 [node name="Ball" parent="." instance=ExtResource( 3 )]
 
+[node name="Position3D" type="Position3D" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5, 0, 32 )
+
+[node name="Position3D1" type="Position3D" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 0, 32 )
+
+[node name="Position3D2" type="Position3D" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30.5, 32 )
+
+[node name="Position3D3" type="Position3D" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.5, 32 )
+
 
 [editable path="pong_scene"]
