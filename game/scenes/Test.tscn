@@ -122,25 +122,19 @@ v_offset = 0.0
 
 [node name="Ball" parent="." instance=ExtResource( 3 )]
 
-[node name="Position3D" type="Position3D" parent="."]
+[node name="FieldSizeGuide" type="Spatial" parent="."]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5, 0, 32 )
 
-[node name="Position3D1" type="Position3D" parent="."]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 0, 32 )
-
-[node name="Position3D2" type="Position3D" parent="."]
+[node name="TopLeft" type="Position3D" parent="FieldSizeGuide"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30.5, 32 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5, 30.5, 0 )
 
-[node name="Position3D3" type="Position3D" parent="."]
+[node name="BottomRight" type="Position3D" parent="FieldSizeGuide"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.5, 32 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, -30.5, 0 )
 
 
 [editable path="pong_scene"]
