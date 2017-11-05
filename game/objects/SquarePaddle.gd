@@ -2,10 +2,11 @@ extends KinematicBody
 
 #export var paddle_size = Vector2(2.0, 2.0)
 onready var paddle_range = init_paddle_range()
+onready var input_handler = get_node("InputHandler")
 
 func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	set_process_input(true)
+	#set_process_input(true)
 	set_fixed_process(true)
 
 #TODO: use paddle size to determine range, otherwise paddle will partially go through the walls.
@@ -27,24 +28,25 @@ func limit_paddle_range(move_to):
 	return Vector3(move_to_v2.x, move_to_v2.y, move_to.z)
 
 
-var movement = Vector2()
+#var movement = Vector2()
 
-func _input(event):
-	# TODO: what is the input event type for mouse motion?
-	if (event.type == InputEvent.MOUSE_MOTION):
-		movement = movement + event.relative_pos
-	pass
+#func _input(event):
+#	# TODO: what is the input event type for mouse motion?
+#	if (event.type == InputEvent.MOUSE_MOTION):
+#		movement = movement + event.relative_pos
+#	pass
 
 
 func _fixed_process(delta):
-	# movement will be absolute!!
+	var move_to = input_handler._get_movement()
+	# movement is absolute!!
 	#print(movement)
-	set_translation(limit_paddle_range(Vector3(get_translation().x + movement.x, get_translation().y - movement.y, get_translation().z)))
+	set_translation(limit_paddle_range(Vector3(move_to.x, move_to.y, get_translation().z)))
 	#var rest = move(Vector3(movement.x, -movement.y, 0.0) * .1)
 	#if is_colliding():
 	#	#move(rest.slide(get_collision_normal()))
 	#	move(get_collision_normal().slide(rest))
 	
-	movement = Vector2() # set to zero
+	#movement = Vector2() # set to zero
 #	# TODO: mouse movement
 #	pass
