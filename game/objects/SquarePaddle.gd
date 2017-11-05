@@ -23,11 +23,15 @@ func init_paddle_range():
 
 func limit_paddle_range(move_to):
 	var pr = paddle_range # shorthand
-	var move_to_v2 = Vector2(clamp(move_to.x, pr.pos.x, pr.end.x), clamp(move_to.y, pr.pos.y, pr.end.y))
-	return Vector3(move_to_v2.x, move_to_v2.y, move_to.z)
+	move_to.x = clamp(move_to.x, pr.pos.x, pr.end.x)
+	move_to.y = clamp(move_to.y, pr.pos.y, pr.end.y)
+	return move_to
 
 
 func _fixed_process(delta):
-	var move_to = input_handler._get_movement()
-	# movement is absolute!!
-	set_translation(limit_paddle_range(Vector3(move_to.x, move_to.y, get_translation().z)))
+	var movement = input_handler._get_movement()
+	var pos = get_translation()
+	pos.x += movement.x
+	pos.y += movement.y
+	pos = limit_paddle_range(pos)
+	set_translation(pos)
