@@ -123,10 +123,6 @@ params/attenuation = 1.0
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32 )
 
-[node name="InputHandler" parent="Paddle1"]
-
-script/script = ExtResource( 4 )
-
 [node name="Camera" type="Camera" parent="Paddle1"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
