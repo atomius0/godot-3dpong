@@ -1,7 +1,3 @@
-[x]- turn all meshes around (in blend file, and re-export), so the front is actually the front...
-[x]- fix everything related to that rotation
-[x]- attach camera to paddle
-[x]- fix wall measurements in blend file! (see Position3D objects in godot test scene)
 
 - try reimplementing all collision code... handle paddle-collisions manually (or maybe all collisions?)
 	- the Ball will be a RigidBody in Character mode, because we need get_colliding_bodies() and set_linear_velocity() (like in HeartBeast's Breakout tutorial.) (will that cause an acceleration bug, like in the tutorial? the one that happens when you hit the ball with the side of the paddle, when the ball is very slow. it will then accelerate a lot...)
@@ -19,24 +15,15 @@
 https://www.youtube.com/watch?v=Kb6JU00DDxk
 @ 05:15
 
-[x]- implement CPU opponent paddle. (same base object as player paddle, but different script.)
 
 - implement an imperfect paddle AI
 
 
 [x]- after implementing the CPU paddle, try the InputHandler idea below.
 
-[x]- use a child object "inputHandler" for handling input? implement a method "InputHandler._get_movement()" for querying movement. (maybe implement AI like this, too.)
 
 - use delta time in _process and _fixed_process.
 
 - write down feature list/plan.
 
 - add side-view cameras (make a mockup first?)
-
-[x]- try fixing the wall-collision bug later, when another input method is implemented.
-[x]- fixed wall-collision bug, using a shitty hack. clean it up next! -> the hack broke... but it doesn't matter any more, since we changed the way the paddle moves, which gets rid of the collision problem.
-
-[x]- the shitty hack was inspired by the "Kinematic Character 3D" demo, file: "cubio.gd" @ line 54+
-
-[x]- accurate_move(): what about the vector by which we slide? should we use the last one after the while loop? or the one returned by the first call to move()? -> irrelevant now, see above (at "wall-collision bug")
