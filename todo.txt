@@ -1,7 +1,16 @@
 
-- the position where the ball hits the paddle should influence the reflection angle. (use an anchor, like in that one godot breakout example by heartbeast. we will then be able to change the influence the paddle has over the ball by moving the empty object closer or further away.)
+- make the walls (and line?) darker, so the ball stands out more.
 
 - add side-view cameras (make a mockup first?)
+
+- add 2 switchable physics modes for the ball (after implementing breakout, won't need to do double the scripting work that way):
+	- "Realistic Mode": which does proper reflection calculations when the ball hits something (currently implemented as default.)
+	
+	- "Pong Mode": which ignores proper physics and simply handles all the axis' separately. (i.e.: collision on X axis -> velocity.X gets negated.)
+~
+
+[x]- the position where the ball hits the paddle should influence the reflection angle. (use an anchor, like in that one godot breakout example by heartbeast. we will then be able to change the influence the paddle has over the ball by moving the empty object closer or further away.) -> done, anchor is called "AngleInfluence" in this project.
+
 
 
 - write down feature list/plan.
