@@ -13,6 +13,15 @@ func _fixed_process(delta):
 		var collider = get_collider()
 		print("Collider: " + collider.get_name())
 		print("collision_normal: " + str(get_collision_normal()))
-		#velocity = velocity.reflect(get_collision_normal()) # vector length changes after collisions...
-		velocity = get_collision_normal().reflect(velocity) # this way around it works fine.
-		print(velocity)
+		
+		if collider.is_in_group("Paddles"):
+			var angle = get_translation() - collider.get_node("AngleInfluence").get_global_transform().origin
+			#print("trans: %s" % [collider.get_node("AngleInfluence").get_global_transform().origin])
+			velocity = angle.normalized().reflect(velocity)
+			#print("ball trans: " + str(get_translation()))
+			print("paddle_normal: " + str(angle.normalized()))
+		else:
+			#velocity = velocity.reflect(get_collision_normal()) # vector length changes after collisions...
+			velocity = get_collision_normal().reflect(velocity) # this way around it works fine.
+		
+		#print(velocity)

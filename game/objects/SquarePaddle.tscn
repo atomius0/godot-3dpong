@@ -95,4 +95,9 @@ _update_shape_index = 0
 
 script/script = ExtResource( 3 )
 
+[node name="AngleInfluence" type="Position3D" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+
 
