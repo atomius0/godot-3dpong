@@ -1,4 +1,6 @@
 
+- add side-view cameras (make a mockup first?)
+
 - try reimplementing all collision code... handle paddle-collisions manually (or maybe all collisions?)
 	- the Ball will be a RigidBody in Character mode, because we need get_colliding_bodies() and set_linear_velocity() (like in HeartBeast's Breakout tutorial.) (will that cause an acceleration bug, like in the tutorial? the one that happens when you hit the ball with the side of the paddle, when the ball is very slow. it will then accelerate a lot...)
 	or use kinematic mode? will get_colliding_bodies() still work, then?
@@ -7,7 +9,7 @@
 ~
 
 [x]- no way to exit game when mouse is captured. add global quit hotkey (alt+F4? escape?)
-- mouse cursor is not hidden when captured.
+[x]- mouse cursor is not hidden when captured.
 
 - the position where the ball hits the paddle should influence the reflection angle. (use an anchor, like in that one godot breakout example by heartbeast. will will then be able to change the influence the paddle has over the ball by moving the empty object closer or further away.)
 
@@ -26,4 +28,3 @@ https://www.youtube.com/watch?v=Kb6JU00DDxk
 
 - write down feature list/plan.
 
-- add side-view cameras (make a mockup first?)
