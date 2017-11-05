@@ -1,7 +1,7 @@
 
 - make the walls (and line?) darker, so the ball stands out more.
 
-- add side-view cameras (make a mockup first?)
+- add side-view cameras (make a mockup first?) -> TopView is done, add SideView next!
 
 - add 2 switchable physics modes for the ball (after implementing breakout, won't need to do double the scripting work that way):
 	- "Realistic Mode": which does proper reflection calculations when the ball hits something (currently implemented as default.)
