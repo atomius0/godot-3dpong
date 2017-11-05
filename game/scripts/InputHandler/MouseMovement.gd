@@ -39,6 +39,11 @@ func _input(event):
 		#if it is, we set it to false and return, before doing anything with the event.
 		skip_next_mouse_motion = true
 		Input.warp_mouse_pos(get_viewport().get_rect().size * 0.5)
+		# NOTE: there is still an issue with this workaround:
+		# if the user moves the mouse too quickly, it will leave the window before we can set it back.
+		# so controlling the paddle won't work until the user moves the cursor back inside the game's window.
+		# POTENTIAL WORKAROUND (TODO): enable set_process() and warp the mouse on every frame inside func _process().
+		# remember that we will still need to set "skip_next_mouse_motion" to true!
 
 
 func _get_movement():
