@@ -114,7 +114,7 @@ fov = 65.0
 near = 0.1
 far = 100.0
 keep_aspect = 1
-current = false
+current = true
 visible_layers = 1048575
 environment = null
 h_offset = 0.0
@@ -126,15 +126,30 @@ v_offset = 0.0
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="TopLeft" type="Position3D" parent="FieldSizeGuide"]
+[node name="BottomLeft" type="Position3D" parent="FieldSizeGuide"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5, 30.5, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5, -30.5, 0 )
 
-[node name="BottomRight" type="Position3D" parent="FieldSizeGuide"]
+[node name="TopRight" type="Position3D" parent="FieldSizeGuide"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, -30.5, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 30.5, 0 )
+
+[node name="Camera" type="Camera" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 93.241 )
+projection = 0
+fov = 65.0
+near = 0.1
+far = 1000.0
+keep_aspect = 1
+current = false
+visible_layers = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
 
 
 [editable path="pong_scene"]
