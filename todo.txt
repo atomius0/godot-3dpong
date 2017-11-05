@@ -1,5 +1,5 @@
 
-- the position where the ball hits the paddle should influence the reflection angle. (use an anchor, like in that one godot breakout example by heartbeast. will will then be able to change the influence the paddle has over the ball by moving the empty object closer or further away.)
+- the position where the ball hits the paddle should influence the reflection angle. (use an anchor, like in that one godot breakout example by heartbeast. we will then be able to change the influence the paddle has over the ball by moving the empty object closer or further away.)
 
 - add side-view cameras (make a mockup first?)
 
