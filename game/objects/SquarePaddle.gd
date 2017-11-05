@@ -5,6 +5,7 @@ onready var paddle_range = init_paddle_range()
 onready var input_handler = get_node("InputHandler")
 
 func _ready():
+	add_to_group("Paddles")
 	set_fixed_process(true)
 
 #TODO: use paddle size to determine range, otherwise paddle will partially go through the walls.
