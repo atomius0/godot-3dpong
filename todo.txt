@@ -6,8 +6,8 @@
 	- Paddle will be a KinematicBody, but it will be moved with set_pos() so the paddle will be unstoppable by the ball.
 ~
 
+[x]- no way to exit game when mouse is captured. add global quit hotkey (alt+F4? escape?)
 - mouse cursor is not hidden when captured.
-- no way to exit game when mouse is captured. add global quit hotkey (alt+F4? escape?)
 
 - the position where the ball hits the paddle should influence the reflection angle. (use an anchor, like in that one godot breakout example by heartbeast. will will then be able to change the influence the paddle has over the ball by moving the empty object closer or further away.)
 
