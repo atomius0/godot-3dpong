@@ -13,5 +13,6 @@ func _fixed_process(delta):
 		var collider = get_collider()
 		print("Collider: " + collider.get_name())
 		print("collision_normal: " + str(get_collision_normal()))
-		velocity = velocity.reflect(get_collision_normal())
+		#velocity = velocity.reflect(get_collision_normal()) # vector length changes after collisions...
+		velocity = get_collision_normal().reflect(velocity) # this way around it works fine.
 		print(velocity)
