@@ -1,5 +1,9 @@
 extends KinematicBody
 
+const OUT_DISTANCE = 40.0 # distance from origin on the Z axis above which the ball is considered out of the playing field.
+
+signal ball_out
+
 var velocity = Vector3(0.0, 0.0, 0.3)
 
 func _ready():
@@ -23,5 +27,16 @@ func _fixed_process(delta):
 		else:
 			#velocity = velocity.reflect(get_collision_normal()) # vector length changes after collisions...
 			velocity = get_collision_normal().reflect(velocity) # this way around it works fine.
-		
-		#print(velocity)
+	
+	check_out_distance()
+
+
+func check_out_distance():
+	var z_pos = get_translation().z
+	if (z_pos > OUT_DISTANCE):
+		# signal parameters: self (the ball object that went out), int (out at player1's side: 1, player2's side: -1)
+		emit_signal("ball_out", self, 1)
+		queue_free()
+	elif (z_pos < -OUT_DISTANCE):
+		emit_signal("ball_out", self, -1)
+		queue_free()
