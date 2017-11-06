@@ -28,5 +28,11 @@ func _ready():
 #	pass
 
 func _ball_out(ball, direction):
-	balls.erase(ball)
+	if (direction < 0):
+		score_p1 += 1
+	elif (direction > 0):
+		score_p2 += 1
+	
+	balls.erase(ball) # remove ball from array
 	print("ball out: %s, %s" % [ball, direction])
+	print("Score: %d : %d" % [score_p1, score_p2])
