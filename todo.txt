@@ -1,4 +1,6 @@
 
+[x]- test export to windows and html5
+
 - write down feature list/plan.
 
 - make sound effects and add them. (how does sound work in godot? look at platformer demo)
