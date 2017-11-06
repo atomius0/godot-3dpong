@@ -3,10 +3,18 @@
 
 [x]- write down feature list/plan.
 
+- make the point counter / ball reset / ball speedup
+
+- build scenes for single player and split-screen. (move everything splitscreen/cam/ui specific from the test scene into a separate scene that will then own an instance of it.)
+
+- how to attach cameras to the viewports later? -> it's probably best if we attach them directly to the viewports and add scripts to them, that move them to follow the objects.
+
+
 - implement the different InputHandler scripts (see doc/planned_features.txt)
 
 - make sound effects and add them. (how does sound work in godot? look at platformer demo)
 	- we will need sound effects for the following things:
+	
 	paddle_hit1 (lower pitched, for paddle 1)
 	paddle_hit2 (higher pitched, for paddle 2)
 	wall_hit
