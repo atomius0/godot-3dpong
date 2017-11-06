@@ -1,9 +1,11 @@
 
-- add additional unshaded meshes for side-view cameras, because putting lights on render layers has no effect.
+[x]- add additional unshaded meshes for side-view cameras, because putting lights on render layers has no effect.
 
-- make the walls (and line?) darker, so the ball stands out more.
+[x]- make the walls (and line?) darker, so the ball stands out more. -> unnecessary.
 
 [x]- add side-view cameras (make a mockup first?) -> TopView and SideView are done
+
+- write down feature list/plan.
 
 - make sound effects and add them. (how does sound work in godot? look at platformer demo)
 
@@ -15,11 +17,6 @@
 
 [x]- the position where the ball hits the paddle should influence the reflection angle. (use an anchor, like in that one godot breakout example by heartbeast. we will then be able to change the influence the paddle has over the ball by moving the empty object closer or further away.) -> done, anchor is called "AngleInfluence" in this project.
 
-
-
-- write down feature list/plan.
-
-
 [Godot Tutorial] Basic Breakout! [P3] Instancing
 https://www.youtube.com/watch?v=Kb6JU00DDxk
 @ 05:15
@@ -28,7 +25,7 @@ https://www.youtube.com/watch?v=Kb6JU00DDxk
 - implement an imperfect paddle AI
 
 
-- use delta time in _process and _fixed_process.
+[x]- use delta time in _process and _fixed_process.
 
 - should the reimplementation of all collision code still be done? or will it work fine as-is? (we already move the Paddle via set_translation now. so the wall-collisions aren't a problem anymore.)
 
