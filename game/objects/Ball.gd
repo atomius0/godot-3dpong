@@ -1,6 +1,8 @@
 extends KinematicBody
 
 const BALL_REST_TIME = 1.0 # time in seconds until the ball starts moving
+const MAX_SPEED = 1.0
+
 const OUT_DISTANCE = 40.0 # distance from origin on the Z axis above which the ball is considered out of the playing field.
 
 signal ball_out
@@ -22,15 +24,17 @@ func _fixed_process(delta):
 	
 	if is_colliding():
 		var collider = get_collider()
-		print("Collider: " + collider.get_name())
-		print("collision_normal: " + str(get_collision_normal()))
+		#print("Collider: " + collider.get_name())
+		#print("collision_normal: " + str(get_collision_normal()))
 		
 		if collider.is_in_group("Paddles"):
 			var angle = get_translation() - collider.get_node("AngleInfluence").get_global_transform().origin
 			#print("trans: %s" % [collider.get_node("AngleInfluence").get_global_transform().origin])
 			velocity = angle.normalized().reflect(velocity)
 			#print("ball trans: " + str(get_translation()))
-			print("paddle_normal: " + str(angle.normalized()))
+			#print("paddle_normal: " + str(angle.normalized()))
+			
+			increase_speed()
 		else:
 			#velocity = velocity.reflect(get_collision_normal()) # vector length changes after collisions...
 			velocity = get_collision_normal().reflect(velocity) # this way around it works fine.
@@ -47,3 +51,12 @@ func check_out_distance():
 	elif (z_pos < -OUT_DISTANCE):
 		emit_signal("ball_out", self, -1)
 		queue_free()
+
+
+func increase_speed():
+	velocity = velocity.normalized() * (min(velocity.length() + 0.025, MAX_SPEED))
+	#if (velocity.z > 0):
+	#	velocity += Vector3(0.0, 0.0, 0.1)
+	#else:
+	#	velocity += Vector3(0.0, 0.0, -0.1)
+	print("Velocity: %s" % [velocity.length()])

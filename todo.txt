@@ -7,7 +7,9 @@
 
 [x]- add timeout to newly spawned balls. ball will start moving once the timeout ended!
 
-- make the point counter / ball reset / ball speedup
+[x]- make the point counter / ball reset / ball speedup
+
+- implement win condition. (research how it works in the original pong first!)
 
 - build scenes for single player and split-screen. (move everything splitscreen/cam/ui specific from the test scene into a separate scene that will then own an instance of it.)
 
