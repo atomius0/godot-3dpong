@@ -19,11 +19,14 @@ func spawn_ball():
 	add_child(ball)
 	balls.append(ball)
 	ball.connect("ball_out", self, "_ball_out")
+	return ball
 	
 
 func _ready():
 	#set_fixed_process(true)
 	spawn_ball()
+	# test:
+	spawn_ball().velocity = Vector3(0.1, 0.2, 0.3) # multiple balls work!
 
 
 #func _fixed_process(delta):
