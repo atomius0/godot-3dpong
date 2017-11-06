@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://scenes/imported/pong_scene.scn" type="PackedScene" id=1]
-[ext_resource path="res://objects/Ball.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/SquarePaddle.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scripts/InputHandler/NPCPerfect.gd" type="Script" id=4]
+[ext_resource path="res://meshes/line.msh" type="Mesh" id=2]
+[ext_resource path="res://materials/white_unshaded.tres" type="Material" id=3]
+[ext_resource path="res://meshes/front_back_wall.msh" type="Mesh" id=4]
+[ext_resource path="res://meshes/top_bottom_wall.msh" type="Mesh" id=5]
+[ext_resource path="res://objects/Ball.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/SquarePaddle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/InputHandler/NPCPerfect.gd" type="Script" id=8]
 
 [sub_resource type="Environment" id=1]
 
@@ -77,6 +81,119 @@ _update_shape_index = 0
 [node name="shape" parent="pong_scene/Walls/Top Wall/col"]
 
 _update_shape_index = 0
+
+[node name="StaticSideCamObjs" type="Spatial" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Line" type="MeshInstance" parent="StaticSideCamObjs"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+layers = 6
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 2 )
+mesh/skeleton = NodePath("..")
+material/0 = ExtResource( 3 )
+
+[node name="BackWall" type="MeshInstance" parent="StaticSideCamObjs"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31, 0 )
+layers = 4
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 4 )
+mesh/skeleton = NodePath("..")
+material/0 = ExtResource( 3 )
+
+[node name="FrontWall" type="MeshInstance" parent="StaticSideCamObjs"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31, 0 )
+layers = 4
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 4 )
+mesh/skeleton = NodePath("..")
+material/0 = ExtResource( 3 )
+
+[node name="TopWall" type="MeshInstance" parent="StaticSideCamObjs"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 0 )
+layers = 2
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 5 )
+mesh/skeleton = NodePath("..")
+material/0 = ExtResource( 3 )
+
+[node name="BottomWall" type="MeshInstance" parent="StaticSideCamObjs"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, 0 )
+layers = 2
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 5 )
+mesh/skeleton = NodePath("..")
+material/0 = ExtResource( 3 )
 
 [node name="FieldSizeGuide" type="Spatial" parent="."]
 
@@ -166,9 +283,9 @@ operator = 0
 params/radius = 67.66
 params/attenuation = 1.0
 
-[node name="Ball" parent="." instance=ExtResource( 2 )]
+[node name="Ball" parent="." instance=ExtResource( 6 )]
 
-[node name="Paddle1" parent="." instance=ExtResource( 3 )]
+[node name="Paddle1" parent="." instance=ExtResource( 7 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32 )
 
@@ -182,7 +299,7 @@ near = 0.1
 far = 100.0
 keep_aspect = 1
 current = true
-visible_layers = 1048575
+visible_layers = 1
 environment = null
 h_offset = 0.0
 v_offset = 0.0
@@ -197,18 +314,18 @@ near = 0.1
 far = 100.0
 keep_aspect = 1
 current = false
-visible_layers = 1048575
+visible_layers = 1
 environment = null
 h_offset = 0.0
 v_offset = 0.0
 
-[node name="Paddle2" parent="." instance=ExtResource( 3 )]
+[node name="Paddle2" parent="." instance=ExtResource( 7 )]
 
 transform/local = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -32 )
 
 [node name="InputHandler" parent="Paddle2"]
 
-script/script = ExtResource( 4 )
+script/script = ExtResource( 8 )
 
 [node name="Camera" type="Camera" parent="."]
 
@@ -220,7 +337,7 @@ near = 0.1
 far = 1000.0
 keep_aspect = 1
 current = false
-visible_layers = 1048575
+visible_layers = 1
 environment = null
 h_offset = 0.0
 v_offset = 0.0
@@ -276,33 +393,10 @@ near = 0.1
 far = 200.0
 keep_aspect = 1
 current = true
-visible_layers = 1048573
+visible_layers = 2
 environment = null
 h_offset = 0.0
 v_offset = 0.0
-
-[node name="DirectionalLight" type="DirectionalLight" parent="SideViews/Top/Viewport/Camera"]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-layers = 1
-params/enabled = true
-params/editor_only = false
-params/bake_mode = 0
-params/energy = 1.0
-colors/diffuse = Color( 1, 1, 1, 1 )
-colors/specular = Color( 1, 1, 1, 1 )
-shadow/shadow = false
-shadow/darkening = 0.0
-shadow/z_offset = 0.05
-shadow/z_slope_scale = 0.0
-shadow/esm_multiplier = 60.0
-shadow/blur_passes = 1.0
-projector = null
-operator = 0
-shadow/mode = 0
-shadow/max_distance = 0.0
-shadow/split_weight = 0.5
-shadow/zoffset_scale = 2.0
 
 [node name="Side" type="Control" parent="SideViews"]
 
@@ -342,33 +436,10 @@ near = 0.1
 far = 200.0
 keep_aspect = 1
 current = true
-visible_layers = 1048571
+visible_layers = 4
 environment = null
 h_offset = 0.0
 v_offset = 0.0
-
-[node name="DirectionalLight" type="DirectionalLight" parent="SideViews/Side/Viewport/Camera"]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-layers = 1
-params/enabled = true
-params/editor_only = false
-params/bake_mode = 0
-params/energy = 1.0
-colors/diffuse = Color( 1, 1, 1, 1 )
-colors/specular = Color( 1, 1, 1, 1 )
-shadow/shadow = false
-shadow/darkening = 0.0
-shadow/z_offset = 0.05
-shadow/z_slope_scale = 0.0
-shadow/esm_multiplier = 60.0
-shadow/blur_passes = 1.0
-projector = null
-operator = 0
-shadow/mode = 0
-shadow/max_distance = 0.0
-shadow/split_weight = 0.5
-shadow/zoffset_scale = 2.0
 
 
 [editable path="pong_scene"]
