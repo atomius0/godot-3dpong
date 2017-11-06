@@ -4,6 +4,9 @@
 - Pong:
 	- Player vs CPU
 	- Player vs Player (Splitscreen)
+	
+	- score counters
+	- winner announcement
 ~
 
 - Breakout:

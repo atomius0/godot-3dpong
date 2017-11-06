@@ -3,18 +3,28 @@
 
 [x]- write down feature list/plan.
 
+- implement the different InputHandler scripts (see doc/planned_features.txt)
+
 - make sound effects and add them. (how does sound work in godot? look at platformer demo)
+	- we will need sound effects for the following things:
+	paddle_hit1 (lower pitched, for paddle 1)
+	paddle_hit2 (higher pitched, for paddle 2)
+	wall_hit
+	block_hit (for breakout mode) (maybe multiple ones, depending on block color?)
+~
+
 
 - ball should get faster every time it hits a paddle. (or better: every time the speed on the Z axis gets negated?)
+
+
+- implement an imperfect paddle AI
+
 
 - add 2 switchable physics modes for the ball (after implementing breakout, won't need to do double the scripting work that way):
 	- "Realistic Mode": which does proper reflection calculations when the ball hits something (currently implemented as default.)
 	
 	- "Pong Mode": which ignores proper physics and simply handles all the axis' separately. (i.e.: collision on X axis -> velocity.X gets negated.)
 ~
-
-- implement an imperfect paddle AI
-
 
 
 - should the reimplementation of all collision code still be done? or will it work fine as-is? (we already move the Paddle via set_translation now. so the wall-collisions aren't a problem anymore.)
