@@ -26,7 +26,7 @@ func _ready():
 	#set_fixed_process(true)
 	spawn_ball()
 	# test:
-	spawn_ball().velocity = Vector3(0.1, 0.2, 0.3) # multiple balls work!
+	#spawn_ball().velocity = Vector3(0.1, 0.2, 0.3) # multiple balls work!
 
 
 #func _fixed_process(delta):
@@ -43,3 +43,5 @@ func _ball_out(ball, direction):
 	
 	print("ball out: %s, %s" % [ball, direction])
 	print("Score: %d : %d" % [score_p1, score_p2])
+	
+	spawn_ball()

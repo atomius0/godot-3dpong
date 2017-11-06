@@ -3,7 +3,7 @@
 
 [x]- write down feature list/plan.
 
-- respawn the ball once it leaves the playing field.
+[x]- respawn the ball once it leaves the playing field.
 
 - add timeout to newly spawned balls. ball will start moving once the timeout ended!
 
