@@ -1,16 +1,23 @@
 extends KinematicBody
 
+const BALL_REST_TIME = 1.0 # time in seconds until the ball starts moving
 const OUT_DISTANCE = 40.0 # distance from origin on the Z axis above which the ball is considered out of the playing field.
 
 signal ball_out
 
 var velocity = Vector3(0.0, 0.0, 0.3)
 
+var rest_timer = 0
+
 func _ready():
 	set_fixed_process(true)
 
 
 func _fixed_process(delta):
+	if (rest_timer < BALL_REST_TIME):
+		rest_timer += delta
+		return
+	
 	var remaining = move(velocity * delta * 60)
 	
 	if is_colliding():

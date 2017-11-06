@@ -5,7 +5,7 @@
 
 [x]- respawn the ball once it leaves the playing field.
 
-- add timeout to newly spawned balls. ball will start moving once the timeout ended!
+[x]- add timeout to newly spawned balls. ball will start moving once the timeout ended!
 
 - make the point counter / ball reset / ball speedup
 
