@@ -1,9 +1,11 @@
 
 [x]- test export to windows and html5
 
-- write down feature list/plan.
+[x]- write down feature list/plan.
 
 - make sound effects and add them. (how does sound work in godot? look at platformer demo)
+
+- ball should get faster every time it hits a paddle. (or better: every time the speed on the Z axis gets negated?)
 
 - add 2 switchable physics modes for the ball (after implementing breakout, won't need to do double the scripting work that way):
 	- "Realistic Mode": which does proper reflection calculations when the ball hits something (currently implemented as default.)

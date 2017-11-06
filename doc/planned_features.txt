@@ -1,0 +1,47 @@
+
+- 3D Pong and Breakout
+
+- Pong:
+	- Player vs CPU
+	- Player vs Player (Splitscreen)
+~
+
+- Breakout:
+	- Single Player only
+	- Multiple stages (3?)
+	- Score counter
+	- Multiple lives, Game Over screen.
+	- Highscore list (maybe)
+~
+
+- Title Screen:
+	- Select Game Mode: Pong / Breakout (maybe with a 3D Logo?)
+	
+	after selection was made: go to appropriate menu.
+~
+
+- Pong Menu:
+	Player 1: [select from control_options]
+	VS
+	Player 2: [select from control_options]
+	
+	-----
+	control_options:
+	[Mouse,
+	Keyboard_wasd,
+	keyboard_arrows,
+	Gamepad1_left_stick,  (d-pad will also work)
+	Gamepad1_right_stick, (face buttons will also work)
+	Gamepad2_left_stick,  (d-pad will also work)
+	Gamepad2_right_stick, (face buttons will also work)
+	CPU_weak,
+	CPU_medium,
+	CPU_strong,
+	CPU_perfect]
+	
+	- Splitscreen will be enabled automatically if the selected control_option for Player 2 is not one of the CPU_* options.
+~
+
+- Breakout Menu:
+	no menu for now, just start the game (add control selection later)
+~
