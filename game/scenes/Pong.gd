@@ -5,6 +5,8 @@
 
 extends Spatial
 
+signal score_updated
+
 var ball_scene = preload("res://objects/Ball.tscn")
 
 var balls = []
@@ -34,5 +36,7 @@ func _ball_out(ball, direction):
 		score_p2 += 1
 	
 	balls.erase(ball) # remove ball from array
+	emit_signal("score_updated", score_p1, score_p2)
+	
 	print("ball out: %s, %s" % [ball, direction])
 	print("Score: %d : %d" % [score_p1, score_p2])

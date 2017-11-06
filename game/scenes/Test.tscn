@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://scenes/Pong.gd" type="Script" id=1]
 [ext_resource path="res://scenes/imported/pong_scene.scn" type="PackedScene" id=2]
@@ -52,6 +52,23 @@ bcs/brightness = 1.0
 bcs/contrast = 1.0
 bcs/saturation = 1.0
 srgb/enabled = false
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Control
+
+onready var p1_label = get_node(\"Player1\")
+onready var p2_label = get_node(\"Player2\")
+
+func _ready():
+	get_node(\"/root/Pong\").connect(\"score_updated\", self, \"_on_score_updated\")
+	_on_score_updated(0, 0) # init score labels
+
+
+func _on_score_updated(score_p1, score_p2):
+	p1_label.set_text(str(score_p1))
+	p2_label.set_text(str(score_p2))
+"
 
 [node name="Pong" type="Spatial"]
 
@@ -477,6 +494,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
+script/script = SubResource( 2 )
 
 [node name="Player1" type="Label" parent="ScoreDisplay"]
 
