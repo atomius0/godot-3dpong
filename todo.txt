@@ -18,6 +18,8 @@
 
 - implement the different InputHandler scripts (see doc/planned_features.txt)
 
+- implement menus. (see doc/planned_features.txt)
+
 - make sound effects and add them. (how does sound work in godot? look at platformer demo)
 	- we will need sound effects for the following things:
 	
