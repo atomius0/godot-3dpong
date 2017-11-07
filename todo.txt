@@ -1,9 +1,9 @@
 [x]- ball should get faster every time it hits a paddle. (or better: every time the speed on the Z axis gets negated?)
 
-- make the ball go to the winner's or the loser's side after scoring? research!
+[x]- make the ball go to the winner's or the loser's side after scoring? research!
 	-> the ball always goes to the loser's side (where it went through), with a random angle.
 	
-	- at the start of the game, the ball will always go to the right player. in a roughly 45 degree angle downwards (maybe a bit less than 45 degrees)
+	- at the start of the game, the ball will always go to the right player. in a roughly 45 degree angle downwards (maybe a bit less than 45 degrees) -> we make it always go straight at the start!
 ~
 
 - fix the bug where the ball will reach max speed instantly if it gets stuck at the paddle's edge.
