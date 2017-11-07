@@ -1,12 +1,3 @@
-[x]- ball should get faster every time it hits a paddle. (or better: every time the speed on the Z axis gets negated?)
-
-[x]- make the ball go to the winner's or the loser's side after scoring? research!
-	-> the ball always goes to the loser's side (where it went through), with a random angle.
-	
-	- at the start of the game, the ball will always go to the right player. in a roughly 45 degree angle downwards (maybe a bit less than 45 degrees) -> we make it always go straight at the start!
-~
-
-[x]- fix the bug where the ball will reach max speed instantly if it gets stuck at the paddle's edge. -> fixed. ball can still get stuck, but it will not gain excessive speed anymore.
 
 - implement win condition. (research how it works in the original pong first!)
 	gba pong -> the first player to reach 9 points, wins!
