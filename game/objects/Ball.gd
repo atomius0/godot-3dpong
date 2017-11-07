@@ -38,15 +38,17 @@ func _fixed_process(delta):
 			#print("ball trans: " + str(get_translation()))
 			#print("paddle_normal: " + str(angle.normalized()))
 			
-			var paddle_col_side
-			if (get_translation().z > 0):
+			# prevent the ball from instantly reaching MAX_SPEED if it gets stuck on the paddle's border
+			var paddle_col_side # side on which the ball collided with the paddle (positive or negative Z)
+			if (get_translation().z > 0): # get the side on which the ball collided
 				paddle_col_side = 1
 			else:
 				paddle_col_side = -1
 			
+			# increase the speed only if it collided on a different side than last time
 			if (prev_paddle_col_side != paddle_col_side):
-				prev_paddle_col_side = paddle_col_side
 				increase_speed()
+				prev_paddle_col_side = paddle_col_side # update the side on which the paddle collided last time.
 		else:
 			#velocity = velocity.reflect(get_collision_normal()) # vector length changes after collisions...
 			velocity = get_collision_normal().reflect(velocity) # this way around it works fine.
