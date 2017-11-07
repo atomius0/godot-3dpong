@@ -4,7 +4,11 @@
 	- move the SideViews and ScoreDisplay according to the screen_layout_mockup.png
 ~
 
+- move the scenes "SideView.tscn" and "ScoreDisplay.tscn" into "res://objects/hud/"
+
 - when done with single-screen / splitscreen scene splitting: delete / move out all scenes from temp folder! (but make sure they aren't instanced any more before deleting!!)
+
+- also remove Test.tscn?
 
 #wip#- build scenes for single player and split-screen. (move everything splitscreen/cam/ui specific from the test scene into a separate scene that will then own an instance of it.)
 
