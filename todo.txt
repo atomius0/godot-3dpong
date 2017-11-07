@@ -1,21 +1,4 @@
 
-[x]- started making a SplitScreen Pong scene. TODO:
-	[x]- add cameras to the viewports
-	[x]- move the SideViews and ScoreDisplay according to the screen_layout_mockup.png
-	
-	[x]- move the scenes "SideView.tscn" and "ScoreDisplay.tscn" into "res://objects/hud/"
-	
-	[x]- when done with single-screen / splitscreen scene splitting: delete / move out all scenes from temp folder! (but make sure they aren't instanced any more before deleting!!)
-	
-	[x]- also remove Test.tscn
-~
-
-
-[x]- build scenes for single player and split-screen. (move everything splitscreen/cam/ui specific from the test scene into a separate scene that will then own an instance of it.)
-
-[x]- how to attach cameras to the viewports later? -> it's probably best if we attach them directly to the viewports and add scripts to them, that move them to follow the objects.
-
-
 - implement the different InputHandler scripts (see doc/planned_features.txt)
 
 - implement menus. (see doc/planned_features.txt)
