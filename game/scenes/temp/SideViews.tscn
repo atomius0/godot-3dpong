@@ -1,0 +1,102 @@
+[gd_scene format=1]
+
+[node name="SideViews" type="Control"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+
+[node name="Top" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 160.0
+margin/bottom = 160.0
+
+[node name="Viewport" type="Viewport" parent="Top"]
+
+rect = Rect2( 0, 0, 160, 160 )
+own_world = false
+world = null
+transparent_bg = false
+render_target/enabled = false
+render_target/v_flip = false
+render_target/clear_on_new_frame = true
+render_target/filter = false
+render_target/gen_mipmaps = false
+render_target/update_mode = 2
+audio_listener/enable_2d = false
+audio_listener/enable_3d = false
+physics/object_picking = false
+gui/disable_input = false
+
+[node name="Camera" type="Camera" parent="Top/Viewport"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 45, 0 )
+projection = 1
+size = 70.0
+near = 0.1
+far = 200.0
+keep_aspect = 1
+current = true
+visible_layers = 2
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+
+[node name="Side" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 864.0
+margin/top = 0.0
+margin/right = 1024.0
+margin/bottom = 160.0
+
+[node name="Viewport" type="Viewport" parent="Side"]
+
+rect = Rect2( 0, 0, 160, 160 )
+own_world = false
+world = null
+transparent_bg = false
+render_target/enabled = false
+render_target/v_flip = false
+render_target/clear_on_new_frame = true
+render_target/filter = false
+render_target/gen_mipmaps = false
+render_target/update_mode = 2
+audio_listener/enable_2d = false
+audio_listener/enable_3d = false
+physics/object_picking = false
+gui/disable_input = false
+
+[node name="Camera" type="Camera" parent="Side/Viewport"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45, 0, 0 )
+projection = 1
+size = 70.0
+near = 0.1
+far = 200.0
+keep_aspect = 1
+current = true
+visible_layers = 4
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+
+

@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Control
+
+onready var p1_label = get_node(\"Player1\")
+onready var p2_label = get_node(\"Player2\")
+
+func _ready():
+	get_node(\"../Pong\").connect(\"score_updated\", self, \"_on_score_updated\")
+	_on_score_updated(0, 0) # init score labels
+
+
+func _on_score_updated(score_p1, score_p2):
+	p1_label.set_text(str(score_p1))
+	p2_label.set_text(str(score_p2))
+"
+
+[node name="ScoreDisplay" type="Control"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+script/script = SubResource( 1 )
+
+[node name="Player1" type="Label" parent="."]
+
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 300.0
+margin/top = 8.0
+margin/right = 340.0
+margin/bottom = 22.0
+text = "10"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Player2" type="Label" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 604.0
+margin/top = 8.0
+margin/right = -604.0
+margin/bottom = 18.0
+text = "10"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+

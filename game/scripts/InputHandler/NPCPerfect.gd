@@ -1,7 +1,7 @@
 extends Node
 
 onready var paddle = get_node("..")
-onready var balls = get_node("/root/Pong").balls
+onready var balls = get_node("../..").balls
 
 func _ready():
 	pass
