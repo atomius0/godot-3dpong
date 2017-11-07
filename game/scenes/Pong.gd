@@ -5,6 +5,8 @@
 
 extends Spatial
 
+const RANDOM_SEED = 1
+
 signal score_updated
 
 var ball_scene = preload("res://objects/Ball.tscn")
@@ -23,6 +25,7 @@ func spawn_ball():
 	
 
 func _ready():
+	seed(RANDOM_SEED) # initialize random number generator with a constant seed.
 	#set_fixed_process(true)
 	spawn_ball()
 	# test:

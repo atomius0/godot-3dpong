@@ -1,17 +1,19 @@
 extends KinematicBody
 
 const BALL_REST_TIME = 1.0 # time in seconds until the ball starts moving
+const START_SPEED = 0.2 # starting speed of the ball. should be a positive floating point value.
 const MAX_SPEED = 1.0
 
 const OUT_DISTANCE = 40.0 # distance from origin on the Z axis above which the ball is considered out of the playing field.
 
 signal ball_out
 
-var velocity = Vector3(0.0, 0.0, 0.3)
+var velocity = Vector3(0.0, 0.0, START_SPEED) # if init_velocity() is not called, make the ball fly straight towards Paddle 1.
 
 var rest_timer = 0
 
 func _ready():
+	#init_velocity()
 	set_fixed_process(true)
 
 
@@ -41,6 +43,16 @@ func _fixed_process(delta):
 	
 	check_out_distance()
 
+
+func init_velocity(side = -1, random_angle = false):
+	# initializes the ball's velocity
+	# should be called by the creator of the ball.
+	# parameters:
+	#  side = int. -1 = toward player 2, +1 = toward player 1.
+	#  random_angle = bool. true = angle will be random, false = ball will fly straight towards the player.
+	
+	# TODO: this
+	pass
 
 func check_out_distance():
 	var z_pos = get_translation().z
