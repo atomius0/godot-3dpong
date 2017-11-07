@@ -21,6 +21,8 @@ func spawn_ball():
 	add_child(ball)
 	balls.append(ball)
 	ball.connect("ball_out", self, "_ball_out")
+	# TESTING
+	ball.init_velocity(-1, true)
 	return ball
 	
 

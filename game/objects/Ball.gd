@@ -2,6 +2,7 @@ extends KinematicBody
 
 const BALL_REST_TIME = 1.0 # time in seconds until the ball starts moving
 const START_SPEED = 0.2 # starting speed of the ball. should be a positive floating point value.
+const MAX_START_ANGLE = 1.0 # maximum stating angle of the ball. 0.0 = straight, 1.0 = ~45 degrees.
 const MAX_SPEED = 1.0
 
 const OUT_DISTANCE = 40.0 # distance from origin on the Z axis above which the ball is considered out of the playing field.
@@ -44,15 +45,27 @@ func _fixed_process(delta):
 	check_out_distance()
 
 
-func init_velocity(side = -1, random_angle = false):
+func init_velocity(side, random_angle):
 	# initializes the ball's velocity
 	# should be called by the creator of the ball.
 	# parameters:
 	#  side = int. -1 = toward player 2, +1 = toward player 1.
 	#  random_angle = bool. true = angle will be random, false = ball will fly straight towards the player.
 	
-	# TODO: this
-	pass
+	var dir = Vector3()
+	
+	if (side < 0):
+		dir.z = -1
+	else:
+		dir.z = 1
+	
+	if (random_angle):
+		dir.x = rand_range(-MAX_START_ANGLE, MAX_START_ANGLE)
+		dir.y = rand_range(-MAX_START_ANGLE, MAX_START_ANGLE)
+	
+	velocity = dir.normalized() * START_SPEED
+	#print("init_velocity: %s" % [velocity])
+
 
 func check_out_distance():
 	var z_pos = get_translation().z
