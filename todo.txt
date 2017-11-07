@@ -1,14 +1,15 @@
 
 - started making a SplitScreen Pong scene. TODO:
-	- add cameras to the viewports
-	- move the SideViews and ScoreDisplay according to the screen_layout_mockup.png
+	[x]- add cameras to the viewports
+	[x]- move the SideViews and ScoreDisplay according to the screen_layout_mockup.png
+	
+	- move the scenes "SideView.tscn" and "ScoreDisplay.tscn" into "res://objects/hud/"
+	
+	- when done with single-screen / splitscreen scene splitting: delete / move out all scenes from temp folder! (but make sure they aren't instanced any more before deleting!!)
+	
+	- also remove Test.tscn?
 ~
 
-- move the scenes "SideView.tscn" and "ScoreDisplay.tscn" into "res://objects/hud/"
-
-- when done with single-screen / splitscreen scene splitting: delete / move out all scenes from temp folder! (but make sure they aren't instanced any more before deleting!!)
-
-- also remove Test.tscn?
 
 #wip#- build scenes for single player and split-screen. (move everything splitscreen/cam/ui specific from the test scene into a separate scene that will then own an instance of it.)
 
@@ -19,6 +20,7 @@
 
 - implement menus. (see doc/planned_features.txt)
 
+
 - make sound effects and add them. (how does sound work in godot? look at platformer demo)
 	- we will need sound effects for the following things:
 	
@@ -28,6 +30,7 @@
 	block_hit (for breakout mode) (maybe multiple ones, depending on block color?)
 ~
 
+- limit maximum angle of the ball to prevent it from taking a long time to reach the other side of the playing field.
 
 
 - implement an imperfect paddle AI
