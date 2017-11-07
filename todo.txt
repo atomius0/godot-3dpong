@@ -20,20 +20,9 @@
 - implement an imperfect paddle AI
 
 
+- probably won't do this because it will be unnecessary after implementing the maximum angle limit:
 - add 2 switchable physics modes for the ball (after implementing breakout, won't need to do double the scripting work that way):
 	- "Realistic Mode": which does proper reflection calculations when the ball hits something (currently implemented as default.)
 	
 	- "Pong Mode": which ignores proper physics and simply handles all the axis' separately. (i.e.: collision on X axis -> velocity.X gets negated.)
 ~
-
-
-- should the reimplementation of all collision code still be done? or will it work fine as-is? (we already move the Paddle via set_translation now. so the wall-collisions aren't a problem anymore.)
-
-???- try reimplementing all collision code... handle paddle-collisions manually (or maybe all collisions?)
-	- the Ball will be a RigidBody in Character mode, because we need get_colliding_bodies() and set_linear_velocity() (like in HeartBeast's Breakout tutorial.) (will that cause an acceleration bug, like in the tutorial? the one that happens when you hit the ball with the side of the paddle, when the ball is very slow. it will then accelerate a lot...)
-	or use kinematic mode? will get_colliding_bodies() still work, then?
-	- Walls will be kept as StaticBodies
-	- Paddle will be a KinematicBody, but it will be moved with set_pos() so the paddle will be unstoppable by the ball.
-~
-???
-
