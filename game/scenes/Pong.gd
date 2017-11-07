@@ -49,4 +49,25 @@ func _ball_out(ball, direction):
 	print("ball out: %s, %s" % [ball, direction])
 	print("Score: %d : %d" % [score_p1, score_p2])
 	
-	spawn_ball(direction, true)
+	var won = has_player_won()
+	if (won == 0):
+		spawn_ball(direction, true)
+	elif (won == 1):
+		print("Player 1 has won!")
+	elif (won == -1):
+		print("Player 2 has won!")
+
+
+func has_player_won():
+	# returns 1 for player 1, -1 for player 2, 0 if no one has won yet.
+	var max_score = max(score_p1, score_p2)
+	var min_score = min(score_p1, score_p2)
+	
+	# a player wins if he has at least 11 points and at least 2 more points than his opponent.
+	if ( max_score >= 11 and (max_score - min_score) >= 2 ):
+		if (score_p1 > score_p2):
+			return 1 # player 1 has won
+		else:
+			return -1 # player 2 has won
+	
+	return 0 # no one has won yet
