@@ -12,7 +12,7 @@ signal ball_out
 var velocity = Vector3(0.0, 0.0, START_SPEED) # if init_velocity() is not called, make the ball fly straight towards Paddle 1.
 
 var rest_timer = 0
-var prev_z_dir = -1 # for preventing the ball from reaching MAX_SPEED instantly when it gets stuck on a paddle's edge.
+var prev_paddle_col_side = 0 # for preventing the ball from reaching MAX_SPEED instantly when it gets stuck on a paddle's edge.
 
 func _ready():
 	#init_velocity()
@@ -38,7 +38,15 @@ func _fixed_process(delta):
 			#print("ball trans: " + str(get_translation()))
 			#print("paddle_normal: " + str(angle.normalized()))
 			
-			increase_speed()
+			var paddle_col_side
+			if (get_translation().z > 0):
+				paddle_col_side = 1
+			else:
+				paddle_col_side = -1
+			
+			if (prev_paddle_col_side != paddle_col_side):
+				prev_paddle_col_side = paddle_col_side
+				increase_speed()
 		else:
 			#velocity = velocity.reflect(get_collision_normal()) # vector length changes after collisions...
 			velocity = get_collision_normal().reflect(velocity) # this way around it works fine.
@@ -57,10 +65,8 @@ func init_velocity(side, random_angle):
 	
 	if (side < 0):
 		dir.z = -1
-		prev_z_dir = 1
 	else:
 		dir.z = 1
-		prev_z_dir = -1
 	
 	if (random_angle):
 		dir.x = rand_range(-MAX_START_ANGLE, MAX_START_ANGLE)
@@ -82,20 +88,20 @@ func check_out_distance():
 
 
 func increase_speed():
-	# prevent speed from increasing if there was no change in z direction since last call to increase_speed()
-	# velocity.z is negated, since the ball has already been reflected by the paddle when this method is called.
-	if ( (-velocity.z < 0 and prev_z_dir < 0) or (-velocity.z > 0 and prev_z_dir > 0) ):
-		# moving in the same direction as before, this means that the ball somehow got stuck at the paddle's edge.
-		# to prevent it from reaching max speed instantly, we simply return, without increasing the speed.
-		print("same direction!!!! velocity.z: %s, prev_z_dir: %s" % [velocity, prev_z_dir])
-		return
-	else:
-		# moving in the opposite direction now, everything is fine.
-		print("other direction :) velocity.z: %s, prev_z_dir: %s" % [velocity, prev_z_dir])
-		if (velocity.z < 0):
-			prev_z_dir = 1
-		else:
-			prev_z_dir = -1
+#	# prevent speed from increasing if there was no change in z direction since last call to increase_speed()
+#	# velocity.z is negated, since the ball has already been reflected by the paddle when this method is called.
+#	if ( (-velocity.z < 0 and prev_z_dir < 0) or (-velocity.z > 0 and prev_z_dir > 0) ):
+#		# moving in the same direction as before, this means that the ball somehow got stuck at the paddle's edge.
+#		# to prevent it from reaching max speed instantly, we simply return, without increasing the speed.
+#		print("same direction!!!! velocity.z: %s, prev_z_dir: %s" % [velocity, prev_z_dir])
+#		return
+#	else:
+#		# moving in the opposite direction now, everything is fine.
+#		print("other direction :) velocity.z: %s, prev_z_dir: %s" % [velocity, prev_z_dir])
+#		if (velocity.z < 0):
+#			prev_z_dir = 1
+#		else:
+#			prev_z_dir = -1
 	velocity = velocity.normalized() * (min(velocity.length() + 0.025, MAX_SPEED))
 	#if (velocity.z > 0):
 	#	velocity += Vector3(0.0, 0.0, 0.1)
