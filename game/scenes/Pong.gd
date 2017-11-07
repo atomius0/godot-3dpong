@@ -16,20 +16,20 @@ var balls = []
 var score_p1 = 0
 var score_p2 = 0
 
-func spawn_ball():
+func spawn_ball(side, random_angle):
 	var ball = ball_scene.instance()
 	add_child(ball)
 	balls.append(ball)
 	ball.connect("ball_out", self, "_ball_out")
-	# TESTING
-	ball.init_velocity(-1, true)
-	return ball
+	
+	ball.init_velocity(side, random_angle)
+	#return ball # returning ball is not required.
 	
 
 func _ready():
 	seed(RANDOM_SEED) # initialize random number generator with a constant seed.
 	#set_fixed_process(true)
-	spawn_ball()
+	spawn_ball(-1, false)
 	# test:
 	#spawn_ball().velocity = Vector3(0.1, 0.2, 0.3) # multiple balls work!
 
@@ -49,4 +49,4 @@ func _ball_out(ball, direction):
 	print("ball out: %s, %s" % [ball, direction])
 	print("Score: %d : %d" % [score_p1, score_p2])
 	
-	spawn_ball()
+	spawn_ball(direction, true)
