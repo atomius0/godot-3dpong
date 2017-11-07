@@ -1,5 +1,22 @@
+[x]- ball should get faster every time it hits a paddle. (or better: every time the speed on the Z axis gets negated?)
+
+- make the ball go to the winner's or the loser's side after scoring? research!
+	-> the ball always goes to the loser's side (where it went through), with a random angle.
+	
+	- at the start of the game, the ball will always go to the right player. in a roughly 45 degree angle downwards (maybe a bit less than 45 degrees)
+~
 
 - implement win condition. (research how it works in the original pong first!)
+	gba pong -> the first player to reach 9 points, wins!
+	
+	gbc pong:
+	- 11 points wins (by itself)
+	- 11:12 -> still continues
+	- 15:13 -> win
+	-> if a player has at least 11 points and the other opponent has at least 2 points less, he wins.
+	
+	--> we will use the gbc scoring system
+~
 
 - build scenes for single player and split-screen. (move everything splitscreen/cam/ui specific from the test scene into a separate scene that will then own an instance of it.)
 
@@ -19,8 +36,6 @@
 	block_hit (for breakout mode) (maybe multiple ones, depending on block color?)
 ~
 
-
-- ball should get faster every time it hits a paddle. (or better: every time the speed on the Z axis gets negated?)
 
 
 - implement an imperfect paddle AI
