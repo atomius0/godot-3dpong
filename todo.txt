@@ -6,6 +6,8 @@
 	- at the start of the game, the ball will always go to the right player. in a roughly 45 degree angle downwards (maybe a bit less than 45 degrees)
 ~
 
+- fix the bug where the ball will reach max speed instantly if it gets stuck at the paddle's edge.
+
 - implement win condition. (research how it works in the original pong first!)
 	gba pong -> the first player to reach 9 points, wins!
 	
