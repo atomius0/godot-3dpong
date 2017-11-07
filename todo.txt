@@ -1,16 +1,4 @@
 
-[x]- implement win condition. (research how it works in the original pong first!)
-	gba pong -> the first player to reach 9 points, wins!
-	
-	gbc pong:
-	- 11 points wins (by itself)
-	- 11:12 -> still continues
-	- 15:13 -> win
-	-> if a player has at least 11 points and the other opponent has at least 2 points less, he wins.
-	
-	--> we will use the gbc scoring system
-~
-
 - build scenes for single player and split-screen. (move everything splitscreen/cam/ui specific from the test scene into a separate scene that will then own an instance of it.)
 
 - how to attach cameras to the viewports later? -> it's probably best if we attach them directly to the viewports and add scripts to them, that move them to follow the objects.
