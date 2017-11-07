@@ -1,5 +1,5 @@
 
-- implement win condition. (research how it works in the original pong first!)
+[x]- implement win condition. (research how it works in the original pong first!)
 	gba pong -> the first player to reach 9 points, wins!
 	
 	gbc pong:
