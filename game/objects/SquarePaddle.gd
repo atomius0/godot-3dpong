@@ -8,16 +8,17 @@ func _ready():
 	add_to_group("Paddles")
 	set_fixed_process(true)
 
-#TODO: use paddle size to determine range, otherwise paddle will partially go through the walls.
+#DONE: use paddle size to determine range, otherwise paddle will partially go through the walls.
 func init_paddle_range():
+	var shape_extents = get_shape(0).get_extents()
 	var fsg = get_node("../FieldSizeGuide")
 	var bl = fsg.get_node("BottomLeft")
 	var tr = fsg.get_node("TopRight")
 	var paddle_range = Rect2(
-		bl.get_translation().x,
-		bl.get_translation().y,
-		tr.get_translation().x - bl.get_translation().x,
-		tr.get_translation().y - bl.get_translation().y
+		bl.get_translation().x + shape_extents.x,
+		bl.get_translation().y + shape_extents.y,
+		tr.get_translation().x - bl.get_translation().x - shape_extents.x*2,
+		tr.get_translation().y - bl.get_translation().y - shape_extents.y*2
 	)
 	return paddle_range
 
