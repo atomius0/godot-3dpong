@@ -88,20 +88,6 @@ func check_out_distance():
 
 
 func increase_speed():
-#	# prevent speed from increasing if there was no change in z direction since last call to increase_speed()
-#	# velocity.z is negated, since the ball has already been reflected by the paddle when this method is called.
-#	if ( (-velocity.z < 0 and prev_z_dir < 0) or (-velocity.z > 0 and prev_z_dir > 0) ):
-#		# moving in the same direction as before, this means that the ball somehow got stuck at the paddle's edge.
-#		# to prevent it from reaching max speed instantly, we simply return, without increasing the speed.
-#		print("same direction!!!! velocity.z: %s, prev_z_dir: %s" % [velocity, prev_z_dir])
-#		return
-#	else:
-#		# moving in the opposite direction now, everything is fine.
-#		print("other direction :) velocity.z: %s, prev_z_dir: %s" % [velocity, prev_z_dir])
-#		if (velocity.z < 0):
-#			prev_z_dir = 1
-#		else:
-#			prev_z_dir = -1
 	velocity = velocity.normalized() * (min(velocity.length() + 0.025, MAX_SPEED))
 	#if (velocity.z > 0):
 	#	velocity += Vector3(0.0, 0.0, 0.1)
