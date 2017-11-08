@@ -1,7 +1,9 @@
 extends Node
 
 var button_sensitivity = 0.3
-var stick_sensitivity = 1.0
+var stick_sensitivity = 2.0
+var stick_dead_zone = 0.15
+
 var movement = Vector2()
 
 # override these values: ----------
@@ -49,9 +51,10 @@ func _input(event):
 	if move_left:  movement.x -= button_sensitivity
 	if move_right: movement.x += button_sensitivity
 	
-	# TODO: add dead zone handling!
-	movement.x += move_axis_x * stick_sensitivity
-	movement.y += move_axis_y * stick_sensitivity
+	if (abs(move_axis_x) > stick_dead_zone):
+		movement.x += ( move_axis_x - (stick_dead_zone * sign(move_axis_x)) ) * stick_sensitivity
+	if (abs(move_axis_y) > stick_dead_zone):
+		movement.y += ( move_axis_y - (stick_dead_zone * sign(move_axis_y)) ) * stick_sensitivity
 
 
 func _get_movement():
