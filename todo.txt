@@ -1,4 +1,12 @@
 
+#wip#- implement menus. (see doc/planned_features.txt)
+	- make menu cursor move
+	- make control options selectable
+	- use global variables to store the options
+	- read these global variables and setup the InputHandler scripts in the "Pong.gd" script
+~
+
+
 - write imperfect paddle AI scripts!
 
 #wip#- implement the different InputHandler scripts (see doc/planned_features.txt)
@@ -15,7 +23,8 @@
 	[x]- CPU_perfect
 ~
 
-- implement menus. (see doc/planned_features.txt)
+
+- add fullscreen hotkey (F11) and quit via alt+F4.
 
 - fix browser mouse input?
 
