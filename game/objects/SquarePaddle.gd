@@ -33,6 +33,8 @@ func limit_paddle_range(move_to):
 func _fixed_process(delta):
 	var movement = input_handler._get_movement()
 	var pos = get_translation()
+	if (pos.z < 0): # invert movement x axis for second paddle.
+		movement.x = -movement.x
 	pos.x += movement.x
 	pos.y += movement.y
 	pos = limit_paddle_range(pos)

@@ -16,4 +16,7 @@ func _get_movement():
 	
 	var pos = paddle.get_translation()
 	var target = closest_ball.get_translation()
+	if (pos.z < 0): # x axis is inverted if we are controlling the right paddle
+		pos.x = -pos.x
+		target.x = -target.x
 	return Vector2(target.x - pos.x, target.y - pos.y)
