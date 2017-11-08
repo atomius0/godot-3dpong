@@ -1,0 +1,214 @@
+[gd_scene format=1]
+
+[node name="TitleScreen" type="Control"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+
+[node name="Options" type="HBoxContainer" parent="."]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 183.0
+margin/top = -48.0
+margin/right = 60.0
+margin/bottom = -98.0
+alignment = 0
+
+[node name="Selection" type="Label" parent="Options"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 18.0
+margin/right = 16.0
+margin/bottom = 32.0
+text = ">>"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Options" type="VBoxContainer" parent="Options"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 20.0
+margin/top = 0.0
+margin/right = 123.0
+margin/bottom = 50.0
+alignment = 0
+
+[node name="Mode" type="HBoxContainer" parent="Options/Options"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 103.0
+margin/bottom = 14.0
+alignment = 0
+
+[node name="Label" type="Label" parent="Options/Options/Mode"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 14.0
+text = "Mode:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Option" type="Label" parent="Options/Options/Mode"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 44.0
+margin/top = 0.0
+margin/right = 88.0
+margin/bottom = 14.0
+text = "Option"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Player1" type="HBoxContainer" parent="Options/Options"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 103.0
+margin/bottom = 14.0
+alignment = 0
+
+[node name="Label" type="Label" parent="Options/Options/Player1"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 55.0
+margin/bottom = 14.0
+text = "Player 1:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Option" type="Label" parent="Options/Options/Player1"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 59.0
+margin/top = 0.0
+margin/right = 103.0
+margin/bottom = 14.0
+text = "Option"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Player2" type="HBoxContainer" parent="Options/Options"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 18.0
+margin/right = 103.0
+margin/bottom = 32.0
+alignment = 0
+
+[node name="Label" type="Label" parent="Options/Options/Player2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 55.0
+margin/bottom = 14.0
+text = "Player 2:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Option" type="Label" parent="Options/Options/Player2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 59.0
+margin/top = 0.0
+margin/right = 103.0
+margin/bottom = 14.0
+text = "Option"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="StartGame" type="HBoxContainer" parent="Options/Options"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 36.0
+margin/right = 103.0
+margin/bottom = 50.0
+alignment = 0
+
+[node name="Label" type="Label" parent="Options/Options/StartGame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 71.0
+margin/bottom = 14.0
+text = "Start Game"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
