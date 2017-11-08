@@ -7,13 +7,13 @@ var stick_dead_zone = 0.15
 var movement = Vector2()
 
 # override these values: ----------
-var joy_device   = 0
-var button_up    = JOY_DPAD_UP
-var button_left  = JOY_DPAD_LEFT
-var button_down  = JOY_DPAD_DOWN
-var button_right = JOY_DPAD_RIGHT
-var axis_x       = JOY_ANALOG_0_X
-var axis_y       = JOY_ANALOG_0_Y
+var joy_device   #= 0
+var button_up    #= JOY_DPAD_UP
+var button_left  #= JOY_DPAD_LEFT
+var button_down  #= JOY_DPAD_DOWN
+var button_right #= JOY_DPAD_RIGHT
+var axis_x       #= JOY_ANALOG_0_X
+var axis_y       #= JOY_ANALOG_0_Y
 # ---------------------------------
 
 var move_up    = false
