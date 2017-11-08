@@ -1,7 +1,9 @@
 
-- make the separate joystick input handler scripts (will all inherit from "Joystick_base.gd")
+[x]- test the InputHandlers for player 2 in splitscreen mode!
 
-- add "# override these values: ----------" comment to "Keyboard_base.gd"
+[x]- make the separate joystick input handler scripts (will all inherit from "Joystick_base.gd")
+
+[x]- add "# override these values: ----------" comment to "Keyboard_base.gd"
 
 [x]- re-scale joy axis values based on dead_zone. (if we don't, the dead_zone will reduce the stick's maximum range. maybe write a joystick test program first!)
 
@@ -9,10 +11,10 @@
 	[x]- Mouse
 	[x]- Keyboard_wasd
 	[x]- keyboard_arrow_keys
-	- Gamepad1_left_stick  (d-pad will also work)
-	- Gamepad1_right_stick (face buttons will also work)
-	- Gamepad2_left_stick  (d-pad will also work)
-	- Gamepad2_right_stick (face buttons will also work)
+	[x]- Gamepad1_left_stick  (d-pad will also work)
+	[x]- Gamepad1_right_stick (face buttons will also work)
+	[x]- Gamepad2_left_stick  (d-pad will also work)
+	[x]- Gamepad2_right_stick (face buttons will also work)
 	- CPU_weak
 	- CPU_medium
 	- CPU_strong
