@@ -1,4 +1,6 @@
-[gd_scene format=1]
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scenes/TitleScreen.gd" type="Script" id=1]
 
 [node name="TitleScreen" type="Control"]
 
@@ -12,54 +14,39 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
+script/script = ExtResource( 1 )
 
-[node name="Options" type="HBoxContainer" parent="."]
+[node name="Selector" type="Label" parent="."]
 
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
 rect/scale = Vector2( 3, 3 )
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 183.0
-margin/top = -48.0
-margin/right = 60.0
-margin/bottom = -98.0
-alignment = 0
-
-[node name="Selection" type="Label" parent="Options"]
-
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 18.0
-margin/right = 16.0
-margin/bottom = 32.0
+margin/left = 304.0
+margin/top = 348.0
+margin/right = 320.0
+margin/bottom = 362.0
 text = ">>"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Options" type="VBoxContainer" parent="Options"]
+[node name="Options" type="VBoxContainer" parent="."]
 
+rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 20.0
-margin/top = 0.0
-margin/right = 123.0
-margin/bottom = 50.0
+margin/left = 358.0
+margin/top = 348.0
+margin/right = 461.0
+margin/bottom = 416.0
 alignment = 0
 
-[node name="Mode" type="HBoxContainer" parent="Options/Options"]
+[node name="Mode" type="HBoxContainer" parent="Options"]
 
-visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -70,7 +57,7 @@ margin/right = 103.0
 margin/bottom = 14.0
 alignment = 0
 
-[node name="Label" type="Label" parent="Options/Options/Mode"]
+[node name="Label" type="Label" parent="Options/Mode"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -85,7 +72,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Option" type="Label" parent="Options/Options/Mode"]
+[node name="Option" type="Label" parent="Options/Mode"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -100,19 +87,19 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Player1" type="HBoxContainer" parent="Options/Options"]
+[node name="Player1" type="HBoxContainer" parent="Options"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 0.0
+margin/top = 18.0
 margin/right = 103.0
-margin/bottom = 14.0
+margin/bottom = 32.0
 alignment = 0
 
-[node name="Label" type="Label" parent="Options/Options/Player1"]
+[node name="Label" type="Label" parent="Options/Player1"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -127,7 +114,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Option" type="Label" parent="Options/Options/Player1"]
+[node name="Option" type="Label" parent="Options/Player1"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -142,19 +129,19 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Player2" type="HBoxContainer" parent="Options/Options"]
+[node name="Player2" type="HBoxContainer" parent="Options"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 18.0
+margin/top = 36.0
 margin/right = 103.0
-margin/bottom = 32.0
+margin/bottom = 50.0
 alignment = 0
 
-[node name="Label" type="Label" parent="Options/Options/Player2"]
+[node name="Label" type="Label" parent="Options/Player2"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -169,7 +156,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Option" type="Label" parent="Options/Options/Player2"]
+[node name="Option" type="Label" parent="Options/Player2"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -184,19 +171,19 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="StartGame" type="HBoxContainer" parent="Options/Options"]
+[node name="StartGame" type="HBoxContainer" parent="Options"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 36.0
+margin/top = 54.0
 margin/right = 103.0
-margin/bottom = 50.0
+margin/bottom = 68.0
 alignment = 0
 
-[node name="Label" type="Label" parent="Options/Options/StartGame"]
+[node name="Label" type="Label" parent="Options/StartGame"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
