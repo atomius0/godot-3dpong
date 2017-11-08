@@ -1,15 +1,18 @@
 extends Node
 
 var button_sensitivity = 0.3
-var stick_sensitivity = 0.3
+var stick_sensitivity = 1.0
 var movement = Vector2()
 
+# override these values: ----------
+var joy_device   = 0
 var button_up    = JOY_DPAD_UP
 var button_left  = JOY_DPAD_LEFT
 var button_down  = JOY_DPAD_DOWN
 var button_right = JOY_DPAD_RIGHT
-var axis_x       #=
-var axis_y       #=
+var axis_x       = JOY_ANALOG_0_X
+var axis_y       = JOY_ANALOG_0_Y
+# ---------------------------------
 
 var move_up    = false
 var move_left  = false
@@ -23,7 +26,7 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if (event.type == InputEvent.JOYSTICK_BUTTON and not event.is_echo()):
+	if (event.type == InputEvent.JOYSTICK_BUTTON and event.device == joy_device and not event.is_echo()):
 		var pressed = event.is_pressed()
 		if (event.button_index == button_up):
 			move_up = pressed
@@ -34,11 +37,21 @@ func _input(event):
 		elif (event.button_index == button_right):
 			move_right = pressed
 	
+	if (event.type == InputEvent.JOYSTICK_MOTION and event.device == joy_device):
+		if (event.axis == axis_x):
+			move_axis_x = event.value
+		elif (event.axis == axis_y):
+			move_axis_y = -event.value
+	
 	movement = Vector2()
 	if move_up:    movement.y += button_sensitivity
 	if move_down:  movement.y -= button_sensitivity
 	if move_left:  movement.x -= button_sensitivity
 	if move_right: movement.x += button_sensitivity
+	
+	# TODO: add dead zone handling!
+	movement.x += move_axis_x * stick_sensitivity
+	movement.y += move_axis_y * stick_sensitivity
 
 
 func _get_movement():
