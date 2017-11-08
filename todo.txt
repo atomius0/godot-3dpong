@@ -3,6 +3,8 @@
 
 - add "# override these values: ----------" comment to "Keyboard_base.gd"
 
+[x]- re-scale joy axis values based on dead_zone. (if we don't, the dead_zone will reduce the stick's maximum range. maybe write a joystick test program first!)
+
 #wip#- implement the different InputHandler scripts (see doc/planned_features.txt)
 	[x]- Mouse
 	[x]- Keyboard_wasd
@@ -34,6 +36,8 @@
 
 - limit maximum angle of the ball to prevent it from taking a long time to reach the other side of the playing field.
 
+
+- joystick dead zone handling should be combined for both axis. (make them a Vector2 and check dead zone based on the vector's length)
 
 - implement an imperfect paddle AI
 
