@@ -3,10 +3,12 @@ extends Node
 var sensitivity = 0.3
 var movement = Vector2()
 
+# override these values: ----------
 var scancode_up    #= KEY_W
 var scancode_left  #= KEY_A
 var scancode_down  #= KEY_S
 var scancode_right #= KEY_D
+# ---------------------------------
 
 var move_up    = false
 var move_left  = false
