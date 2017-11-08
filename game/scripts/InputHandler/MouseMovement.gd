@@ -1,7 +1,5 @@
 extends Node
 
-# TODO: disable mouse capture when this node gets deleted!
-
 var sensitivity = 0.15
 var movement = Vector2()
 
@@ -16,7 +14,12 @@ func _ready():
 	
 	# so let's just hide the mouse and "capture" it via code (in _input):
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	
+
+
+func _exit_tree():
+	# disable mouse capture when this node gets deleted.
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 var skip_next_mouse_motion = false
 
