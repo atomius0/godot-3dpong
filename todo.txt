@@ -1,4 +1,8 @@
 
+- make the separate joystick input handler scripts (will all inherit from "Joystick_base.gd")
+
+- add "# override these values: ----------" comment to "Keyboard_base.gd"
+
 #wip#- implement the different InputHandler scripts (see doc/planned_features.txt)
 	[x]- Mouse
 	[x]- Keyboard_wasd
