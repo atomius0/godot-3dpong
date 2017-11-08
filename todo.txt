@@ -1,7 +1,21 @@
 
-- implement the different InputHandler scripts (see doc/planned_features.txt)
+#wip#- implement the different InputHandler scripts (see doc/planned_features.txt)
+	[x]- Mouse
+	[x]- Keyboard_wasd
+	[x]- keyboard_arrow_keys
+	- Gamepad1_left_stick  (d-pad will also work)
+	- Gamepad1_right_stick (face buttons will also work)
+	- Gamepad2_left_stick  (d-pad will also work)
+	- Gamepad2_right_stick (face buttons will also work)
+	- CPU_weak
+	- CPU_medium
+	- CPU_strong
+	[x]- CPU_perfect
+~
 
 - implement menus. (see doc/planned_features.txt)
+
+- fix browser mouse input?
 
 - make breakout scene & multiple stage subscenes.
 

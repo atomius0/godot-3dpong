@@ -32,7 +32,7 @@
 	control_options:
 	[Mouse,
 	Keyboard_wasd,
-	keyboard_arrows,
+	keyboard_arrow_keys,
 	Gamepad1_left_stick,  (d-pad will also work)
 	Gamepad1_right_stick, (face buttons will also work)
 	Gamepad2_left_stick,  (d-pad will also work)
