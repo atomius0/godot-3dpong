@@ -96,5 +96,14 @@ func accept_option(option_idx):
 func start_game():
 	print("Starting Game... InputHandlers: %s, %s" % [Global.player1_input, Global.player2_input])
 	
-	# TODO: load SingleScreen or SplitScreen scene depending on Global.player2_input!
-	get_tree().change_scene("res://scenes/SplitScreenPong.tscn")
+	var game_scene = "res://scenes/SplitScreenPong.tscn"
+	# load single screen pong if Player 2 is a CPU:
+	if (
+		Global.player2_input == Global.InputHandler.CPU_WEAK or
+		Global.player2_input == Global.InputHandler.CPU_MEDIUM or
+		Global.player2_input == Global.InputHandler.CPU_STRONG or
+		Global.player2_input == Global.InputHandler.CPU_PERFECT
+	):
+		game_scene = "res://scenes/SingleScreenPong.tscn"
+	
+	get_tree().change_scene(game_scene)
