@@ -64,14 +64,12 @@ func _input(event):
 		
 	elif (event.is_action_pressed("menu_left")):
 		change_option(cursor_pos, -1)
-		print("menu_left")
 		
 	elif (event.is_action_pressed("menu_right")):
 		change_option(cursor_pos, 1)
-		print("menu_right")
 		
 	elif (event.is_action_pressed("menu_accept")):
-		print("menu_accept")
+		accept_option(cursor_pos)
 
 
 func change_option(option_idx, direction):
@@ -121,3 +119,11 @@ func place_cursor(option_idx):
 	# so we can call this method to place the cursor on a specific option without having to set cursor_pos manually:
 	cursor_pos = option_idx
 	cursor.set_global_pos(Vector2(cursor.get_global_pos().x, options_node.get_child(option_idx).get_global_pos().y))
+
+
+func accept_option(option_idx):
+	if (option_idx == Option.START_GAME):
+		start_game()
+
+func start_game():
+	print("start game!")
