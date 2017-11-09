@@ -78,19 +78,20 @@ func change_option(option_idx, direction):
 	# changes the option relative to the current option
 	print("change_option: %s, %s" % [option_idx, direction])
 	
-	#var is_changeable = false
+	var is_changeable = false
 	var max_option_id
 	if (option_idx == Option.PLAYER1_INPUT):
-		#is_changeable = true
+		is_changeable = true
 		max_option_id = InputHandler.CPU_PERFECT
 		
 	elif (option_idx == Option.PLAYER2_INPUT):
-		#is_changeable = true
+		is_changeable = true
 		max_option_id = InputHandler.CPU_PERFECT
 	
-	var new_option_id = get_option_id(option_idx) + direction
-	new_option_id = int(clamp(new_option_id, 0, max_option_id))
-	set_option(option_idx, new_option_id)
+	if (is_changeable):
+		var new_option_id = get_option_id(option_idx) + direction
+		new_option_id = int(clamp(new_option_id, 0, max_option_id))
+		set_option(option_idx, new_option_id)
 
 
 func get_option_id(option_idx):
