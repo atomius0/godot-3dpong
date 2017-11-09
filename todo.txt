@@ -2,8 +2,13 @@
 #wip#- implement menus. (see doc/planned_features.txt)
 	[x]- make menu cursor move
 	[x]- make control options selectable
-	- use global variables to store the options
-	- read these global variables and setup the InputHandler scripts in the "Pong.gd" script
+	[x]- use global variables to store the options
+	[x]- read these global variables and setup the InputHandler scripts in the "Pong.gd" script
+	[x]- use Node.replace_by() to replace the paddle's InputHandler node with one that has the appropriate script.
+	
+	- load SingleScreen or SplitScreen scene depending on if Player 2 is an NPC.
+	
+	- make a 3d logo? "3D Pong", swapping out the word "Pong" for "Breakout" when the player flips the game mode option.
 ~
 
 
@@ -24,7 +29,7 @@
 ~
 
 
-- add fullscreen hotkey (F11) and quit via alt+F4.
+[x]- add fullscreen hotkey (F11) and quit via alt+F4. -> quit via alt+F4 should work as-is. but I added a (commented out) handler anyway.
 
 - fix browser mouse input?
 
