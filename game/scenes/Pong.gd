@@ -26,7 +26,22 @@ func _ready():
 
 
 func init_input_handlers():
-	pass # TODO
+	change_input_handler(get_node("Paddle1"), Global.player1_input)
+	change_input_handler(get_node("Paddle2"), Global.player2_input)
+
+
+func change_input_handler(paddle_node, input_handler_id):
+	# lookup script name, load and instance the InputHandler script:
+	var new_input_handler = load(Global.INPUT_HANDLER_SCRIPTS[input_handler_id]).new()
+	
+	new_input_handler.set_name("InputHandler")
+	#new_input_handler.set_owner(paddle_node) # we don't need to set the owner
+	
+	# replace the old InputHandler node by the new one:
+	paddle_node.get_node("InputHandler").replace_by(new_input_handler)
+	
+	# register the new InputHandler with the paddle, otherwise it will still try to access the old one:
+	paddle_node.input_handler = new_input_handler
 
 
 func spawn_ball(side, random_angle):

@@ -92,6 +92,9 @@ func accept_option(option_idx):
 	if (option_idx == Option.START_GAME):
 		start_game()
 
+
 func start_game():
-	print("start game!")
-	print("InputHandlers: %s, %s" % [Global.player1_input, Global.player2_input])
+	print("Starting Game... InputHandlers: %s, %s" % [Global.player1_input, Global.player2_input])
+	
+	# TODO: load SingleScreen or SplitScreen scene depending on Global.player2_input!
+	get_tree().change_scene("res://scenes/SplitScreenPong.tscn")
