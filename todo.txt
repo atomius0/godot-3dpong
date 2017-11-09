@@ -1,7 +1,7 @@
 
 #wip#- implement menus. (see doc/planned_features.txt)
-	- make menu cursor move
-	- make control options selectable
+	[x]- make menu cursor move
+	[x]- make control options selectable
 	- use global variables to store the options
 	- read these global variables and setup the InputHandler scripts in the "Pong.gd" script
 ~
