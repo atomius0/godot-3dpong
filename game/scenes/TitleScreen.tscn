@@ -16,7 +16,7 @@ margin/right = 0.0
 margin/bottom = 0.0
 script/script = ExtResource( 1 )
 
-[node name="Selector" type="Label" parent="."]
+[node name="Cursor" type="Label" parent="."]
 
 rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = true
