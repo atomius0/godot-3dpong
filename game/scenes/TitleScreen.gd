@@ -13,43 +13,11 @@ enum Option {
 	START_GAME
 }
 
-enum InputHandler {
-	MOUSE,
-	KEYBOARD_WASD,
-	KEYBOARD_ARROWS,
-	GAMEPAD1_LEFT_STICK,
-	GAMEPAD1_RIGHT_STICK,
-	GAMEPAD2_LEFT_STICK,
-	GAMEPAD2_RIGHT_STICK,
-	CPU_WEAK,
-	CPU_MEDIUM,
-	CPU_STRONG,
-	CPU_PERFECT
-}
-
-const INPUT_HANDLER_NAMES = [
-	"Mouse",
-	"WASD Keys",
-	"Arrow Keys",
-	"Gamepad 1 Left Stick",
-	"Gamepad 1 Right Stick",
-	"Gamepad 2 Left Stick",
-	"Gamepad 2 Right Stick",
-	"CPU - Weak",
-	"CPU - Medium",
-	"CPU - Strong",
-	"CPU - Perfect"
-]
-
-# Options: ----------
-var player1_input = InputHandler.MOUSE
-var player2_input = InputHandler.CPU_PERFECT # TODO: change to CPU_WEAK once implemented.
-# -------------------
 
 func _ready():
 	place_cursor(0)
-	set_option(Option.PLAYER1_INPUT, player1_input)
-	set_option(Option.PLAYER2_INPUT, player2_input)
+	set_option(Option.PLAYER1_INPUT, Global.player1_input)
+	set_option(Option.PLAYER2_INPUT, Global.player2_input)
 	
 	set_process_input(true)
 	pass
@@ -80,11 +48,11 @@ func change_option(option_idx, direction):
 	var max_option_id
 	if (option_idx == Option.PLAYER1_INPUT):
 		is_changeable = true
-		max_option_id = InputHandler.CPU_PERFECT
+		max_option_id = Global.InputHandler.CPU_PERFECT
 		
 	elif (option_idx == Option.PLAYER2_INPUT):
 		is_changeable = true
-		max_option_id = InputHandler.CPU_PERFECT
+		max_option_id = Global.InputHandler.CPU_PERFECT
 	
 	if (is_changeable):
 		var new_option_id = get_option_id(option_idx) + direction
@@ -94,19 +62,18 @@ func change_option(option_idx, direction):
 
 func get_option_id(option_idx):
 	if (option_idx == Option.PLAYER1_INPUT):
-		return player1_input
+		return Global.player1_input
 	elif (option_idx == Option.PLAYER2_INPUT):
-		return player2_input
-		
+		return Global.player2_input
 
 
 func set_option(option_idx, option_id):
 	if (option_idx == Option.PLAYER1_INPUT):
-		player1_input = option_id
-		options_node.get_child(Option.PLAYER1_INPUT).get_node("Option").set_text(INPUT_HANDLER_NAMES[option_id])
+		Global.player1_input = option_id
+		options_node.get_child(Option.PLAYER1_INPUT).get_node("Option").set_text(Global.INPUT_HANDLER_NAMES[option_id])
 	elif (option_idx == Option.PLAYER2_INPUT):
-		player2_input = option_id
-		options_node.get_child(Option.PLAYER2_INPUT).get_node("Option").set_text(INPUT_HANDLER_NAMES[option_id])
+		Global.player2_input = option_id
+		options_node.get_child(Option.PLAYER2_INPUT).get_node("Option").set_text(Global.INPUT_HANDLER_NAMES[option_id])
 	pass
 
 
@@ -127,3 +94,4 @@ func accept_option(option_idx):
 
 func start_game():
 	print("start game!")
+	print("InputHandlers: %s, %s" % [Global.player1_input, Global.player2_input])
