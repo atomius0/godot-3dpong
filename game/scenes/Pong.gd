@@ -8,6 +8,7 @@ extends Spatial
 const RANDOM_SEED = 1
 
 signal score_updated
+signal player_wins
 
 var ball_scene = preload("res://objects/Ball.tscn")
 
@@ -71,8 +72,10 @@ func _ball_out(ball, direction):
 		spawn_ball(direction, true)
 	elif (won == 1):
 		print("Player 1 has won!")
+		emit_signal("player_wins", 1)
 	elif (won == -1):
 		print("Player 2 has won!")
+		emit_signal("player_wins", -1)
 
 
 func has_player_won():
