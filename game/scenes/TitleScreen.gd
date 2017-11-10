@@ -38,6 +38,9 @@ func _input(event):
 		
 	elif (event.is_action_pressed("menu_accept")):
 		accept_option(cursor_pos)
+		
+	elif (event.type == InputEvent.KEY and event.scancode == KEY_ESCAPE and event.is_pressed()):
+		get_tree().quit()
 
 
 func change_option(option_idx, direction):
