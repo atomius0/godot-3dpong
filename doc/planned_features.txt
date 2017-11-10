@@ -45,6 +45,11 @@
 	- Splitscreen will be enabled automatically if the selected control_option for Player 2 is not one of the CPU_* options.
 ~
 
+- Pause Menu:
+	- Continue
+	- Quit
+~
+
 - Breakout Menu:
 	no menu for now, just start the game (add control selection later)
 ~
