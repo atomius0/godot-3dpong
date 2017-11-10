@@ -15,13 +15,18 @@
 	- make a 3d logo? "3D Pong", swapping out the word "Pong" for "Breakout" when the player flips the game mode option. (and zooming out, because "Breakout" is longer than "Pong")
 ~
 
-- add pause menu (plan it first!)
+[x]- add pause menu (see planned_features.txt)
+
+
+[x]- add escape key handling to TitleScreen, remove it from GlobalHotkeys.gd
 
 [x]- add winner announcement
 
 [x]- add a ball-hit / paddle-hit animation (red or blue flashing?) -> blue flashing.
 
 - fix browser mouse controls.
+
+- search for "TODO" in all scripts!
 
 - write imperfect paddle AI scripts!
 
