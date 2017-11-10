@@ -17,9 +17,9 @@
 
 - add pause menu (plan it first!)
 
-- add winner announcement
+[x]- add winner announcement
 
-- add a ball-hit / paddle-hit animation (red or blue flashing?)
+[x]- add a ball-hit / paddle-hit animation (red or blue flashing?) -> blue flashing.
 
 - fix browser mouse controls.
 
