@@ -1,6 +1,4 @@
 
-[x]- finish and extrude letters of 3d logo. clean up geometry of all letters and logo parts (remove duplicate vertices etc.), fix origins.
-
 #wip#- implement menus. (see doc/planned_features.txt)
 	[x]- make menu cursor move
 	[x]- make control options selectable
@@ -15,16 +13,8 @@
 	- make a 3d logo? "3D Pong", swapping out the word "Pong" for "Breakout" when the player flips the game mode option. (and zooming out, because "Breakout" is longer than "Pong")
 ~
 
-[x]- add pause menu (see planned_features.txt)
 
-
-[x]- add escape key handling to TitleScreen, remove it from GlobalHotkeys.gd
-
-[x]- add winner announcement
-
-[x]- add a ball-hit / paddle-hit animation (red or blue flashing?) -> blue flashing.
-
-- fix browser mouse controls.
+- fix browser mouse controls. (how to check which platform we are running on?)
 
 - search for "TODO" in all scripts!
 
@@ -46,8 +36,6 @@
 
 
 [x]- add fullscreen hotkey (F11) and quit via alt+F4. -> quit via alt+F4 should work as-is. but I added a (commented out) handler anyway.
-
-- fix browser mouse input?
 
 - make breakout scene & multiple stage subscenes.
 
