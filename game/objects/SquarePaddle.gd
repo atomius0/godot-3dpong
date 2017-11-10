@@ -7,21 +7,6 @@ onready var input_handler = get_node("InputHandler")
 func _ready():
 	add_to_group("Paddles")
 	set_fixed_process(true)
-	
-	make_material_unique()
-	
-
-func make_material_unique():
-	get_node("MeshInstance").set_material_override(preload("res://materials/paddle_alpha.tres").duplicate())
-	# from: https://github.com/godotengine/godot/issues/2162#issuecomment-114866934
-	# and:  https://godotengine.org/qa/7350/how-to-change-materials-in-a-single-instance
-	# surface_get_material:  https://www.reddit.com/r/godot/comments/4zikue/modifying_material_properties_from_gdscript/d6wbm9q/
-	#var mesh_instance = get_node("MeshInstance")
-	#var material = mesh_instance.get_mesh().surface_get_material(0)
-	#print(material)
-	#print(mesh_instance.get_material_override())
-	#mi.set_material(mi.get_material_override().duplicate())
-	#mesh_instance.set_material_override(material.duplicate())
 
 
 #DONE: use paddle size to determine range, otherwise paddle will partially go through the walls.
