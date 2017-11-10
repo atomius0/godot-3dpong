@@ -32,6 +32,7 @@ func _fixed_process(delta):
 		#print("collision_normal: " + str(get_collision_normal()))
 		
 		if collider.is_in_group("Paddles"):
+			collider.get_node("AnimationPlayer").play("PaddleFlash")
 			var angle = get_translation() - collider.get_node("AngleInfluence").get_global_transform().origin
 			#print("trans: %s" % [collider.get_node("AngleInfluence").get_global_transform().origin])
 			velocity = angle.normalized().reflect(velocity)
