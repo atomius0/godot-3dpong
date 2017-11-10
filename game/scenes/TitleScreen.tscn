@@ -156,6 +156,26 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="Credits" type="Label" parent="."]
+
+anchor/left = 3
+anchor/top = 1
+anchor/right = 3
+anchor/bottom = 1
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 281.0
+margin/top = 28.0
+margin/right = 0.0
+margin/bottom = 14.0
+text = "Made by atomius for GitHub Game Off 2017"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="_TempOptions" type="Control" parent="."]
 
 editor/display_folded = true
