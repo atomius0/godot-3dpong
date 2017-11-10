@@ -8,13 +8,13 @@
 	
 	[x]- load SingleScreen or SplitScreen scene depending on if Player 2 is an NPC.
 	
-	- add name and credits to title screen!
+	[x]- add name and credits to title screen!
 	
-	- make a 3d logo? "3D Pong", swapping out the word "Pong" for "Breakout" when the player flips the game mode option. (and zooming out, because "Breakout" is longer than "Pong")
+	[x]- make a 3d logo? "3D Pong", swapping out the word "Pong" for "Breakout" when the player flips the game mode option. (and zooming out, because "Breakout" is longer than "Pong")
 ~
 
 
-- fix browser mouse controls. (how to check which platform we are running on?)
+[x]- fix browser mouse controls. (how to check which platform we are running on?) -> with OS.get_name(). mouse capture seems to be broken in HTML5...
 
 - search for "TODO" in all scripts!
 
