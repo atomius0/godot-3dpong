@@ -1,4 +1,6 @@
 
+[x]- finish and extrude letters of 3d logo. clean up geometry of all letters and logo parts (remove duplicate vertices etc.), fix origins.
+
 #wip#- implement menus. (see doc/planned_features.txt)
 	[x]- make menu cursor move
 	[x]- make control options selectable
@@ -10,12 +12,16 @@
 	
 	- add name and credits to title screen!
 	
-	- make a 3d logo? "3D Pong", swapping out the word "Pong" for "Breakout" when the player flips the game mode option.
+	- make a 3d logo? "3D Pong", swapping out the word "Pong" for "Breakout" when the player flips the game mode option. (and zooming out, because "Breakout" is longer than "Pong")
 ~
 
 - add pause menu (plan it first!)
 
 - add winner announcement
+
+- add a ball-hit / paddle-hit animation (red or blue flashing?)
+
+- fix browser mouse controls.
 
 - write imperfect paddle AI scripts!
 
