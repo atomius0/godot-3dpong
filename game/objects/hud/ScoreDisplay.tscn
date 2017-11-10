@@ -1,21 +1,6 @@
 [gd_scene load_steps=2 format=1]
 
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends Control
-
-onready var p1_label = get_node(\"Player1\")
-onready var p2_label = get_node(\"Player2\")
-
-func _ready():
-	get_node(\"../Pong\").connect(\"score_updated\", self, \"_on_score_updated\")
-	_on_score_updated(0, 0) # init score labels
-
-
-func _on_score_updated(score_p1, score_p2):
-	p1_label.set_text(str(score_p1))
-	p2_label.set_text(str(score_p2))
-"
+[ext_resource path="res://objects/hud/ScoreDisplay.gd" type="Script" id=1]
 
 [node name="ScoreDisplay" type="Control"]
 
@@ -29,7 +14,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-script/script = SubResource( 1 )
+script/script = ExtResource( 1 )
 
 [node name="Player1" type="Label" parent="."]
 
