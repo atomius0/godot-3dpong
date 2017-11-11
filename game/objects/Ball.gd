@@ -3,6 +3,7 @@ extends KinematicBody
 const BALL_REST_TIME = 1.0 # time in seconds until the ball starts moving
 const START_SPEED = 0.2 # starting speed of the ball. should be a positive floating point value.
 const MAX_START_ANGLE = 1.0 # maximum stating angle of the ball. 0.0 = straight, 1.0 = ~45 degrees.
+const MAX_ANGLE = 0.4 # the smaller the value, the steeper the maximum angle will be. (don't know how to do it properly...)
 const MAX_SPEED = 1.0
 
 const OUT_DISTANCE = 40.0 # distance from origin on the Z axis above which the ball is considered out of the playing field.
@@ -53,7 +54,9 @@ func _fixed_process(delta):
 		else:
 			#velocity = velocity.reflect(get_collision_normal()) # vector length changes after collisions...
 			velocity = get_collision_normal().reflect(velocity) # this way around it works fine.
-	
+		
+		limit_angle()
+	#limit_angle()
 	check_out_distance()
 
 
@@ -97,3 +100,27 @@ func increase_speed():
 	#else:
 	#	velocity += Vector3(0.0, 0.0, -0.1)
 	print("Velocity: %s" % [velocity.length()])
+
+
+func limit_angle(): # wtf... how to do this properly?
+	var vn = velocity.normalized()
+	var vlen = velocity.length()
+	#print(vn.z)
+	#if (vn.z < 0):
+	#	vn.z = min(vn.z, -MAX_ANGLE)
+	#else:
+	#	vn.z = max(vn.z, MAX_ANGLE)
+	#print(vn.z)
+	var negative = false
+	if (vn.z < 0):
+		vn.z = -vn.z
+		negative = true
+	
+	print(vn.z)
+	if (vn.z < MAX_ANGLE): print("limiting angle!!!")
+	vn.z = max(vn.z, MAX_ANGLE)
+	print(vn.z)
+	
+	if (negative):
+		vn.z = -vn.z
+	velocity = vn.normalized() * vlen
