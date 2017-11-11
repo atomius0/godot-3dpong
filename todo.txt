@@ -13,6 +13,7 @@
 	[x]- make a 3d logo? "3D Pong", swapping out the word "Pong" for "Breakout" when the player flips the game mode option. (and zooming out, because "Breakout" is longer than "Pong")
 ~
 
+- check if I can score at least one point against each of the CPUs!
 
 [x]- fix browser mouse controls. (how to check which platform we are running on?) -> with OS.get_name(). mouse capture seems to be broken in HTML5...
 
@@ -48,8 +49,9 @@
 	block_hit (for breakout mode) (maybe multiple ones, depending on block color?)
 ~
 
-- limit maximum angle of the ball to prevent it from taking a long time to reach the other side of the playing field.
+[x]- limit maximum angle of the ball to prevent it from taking a long time to reach the other side of the playing field.
 
+[x]- fine-tune the MAX_ANGLE value in Ball.gd (limits the maximum angle of the ball)
 
 - joystick dead zone handling should be combined for both axis. (make them a Vector2 and check dead zone based on the vector's length) (make a test program for this first!)
 
