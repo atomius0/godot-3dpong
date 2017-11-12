@@ -2,9 +2,9 @@
 - make sound effects and add them. (how does sound work in godot? look at platformer demo)
 	- we will need sound effects for the following things:
 	
-	paddle_hit1 (lower pitched, for paddle 1)
-	paddle_hit2 (higher pitched, for paddle 2)
-	wall_hit
+	[x] paddle_hit1 (lower pitched, for paddle 1) (C5)
+	[x] paddle_hit2 (higher pitched, for paddle 2) (C6)
+	[x] wall_hit (C4)
 	block_hit (for breakout mode) (maybe multiple ones, depending on block color?)
 ~
 
