@@ -8,9 +8,9 @@ var cursor_pos = 0 # currently selected menu option
 
 enum Option {
 	#GAME_MODE,
+	START_GAME,
 	PLAYER1_INPUT,
-	PLAYER2_INPUT,
-	START_GAME
+	PLAYER2_INPUT
 }
 
 

@@ -217,7 +217,7 @@ margin/right = 461.0
 margin/bottom = 416.0
 alignment = 0
 
-[node name="Player1" type="HBoxContainer" parent="Options"]
+[node name="StartGame" type="HBoxContainer" parent="Options"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = false
@@ -227,6 +227,33 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 103.0
 margin/bottom = 14.0
+alignment = 0
+
+[node name="Label" type="Label" parent="Options/StartGame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 71.0
+margin/bottom = 14.0
+text = "Start Game"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Player1" type="HBoxContainer" parent="Options"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 18.0
+margin/right = 103.0
+margin/bottom = 32.0
 alignment = 0
 
 [node name="Label" type="Label" parent="Options/Player1"]
@@ -266,9 +293,9 @@ focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 18.0
+margin/top = 36.0
 margin/right = 103.0
-margin/bottom = 32.0
+margin/bottom = 50.0
 alignment = 0
 
 [node name="Label" type="Label" parent="Options/Player2"]
@@ -297,33 +324,6 @@ margin/top = 0.0
 margin/right = 103.0
 margin/bottom = 14.0
 text = "Option"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="StartGame" type="HBoxContainer" parent="Options"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 36.0
-margin/right = 103.0
-margin/bottom = 50.0
-alignment = 0
-
-[node name="Label" type="Label" parent="Options/StartGame"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 71.0
-margin/bottom = 14.0
-text = "Start Game"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
