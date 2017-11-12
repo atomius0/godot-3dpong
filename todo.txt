@@ -1,5 +1,5 @@
 
-- make sound effects and add them. (how does sound work in godot? look at platformer demo)
+[x]- make sound effects and add them. (how does sound work in godot? look at platformer demo)
 	- we will need sound effects for the following things:
 	
 	[x] paddle_hit1 (lower pitched, for paddle 1) (C5)
@@ -56,7 +56,9 @@
 
 [x]- fine-tune the MAX_ANGLE value in Ball.gd (limits the maximum angle of the ball)
 
-- joystick dead zone handling should be combined for both axis. (make them a Vector2 and check dead zone based on the vector's length) (make a test program for this first!)
+[x]- joystick dead zone handling should be combined for both axis. (make them a Vector2 and check dead zone based on the vector's length) (make a test program for this first!) -> implemented it, but removing the dead zone from the vector's lenght isn't possible to do directly. Didn't get it to work right so I reverted it to the old dead zone handling method, where each axis is handled separately.
+
+- try fixing the joystick dead zone handling again later?
 
 
 - probably won't do this because it will be unnecessary after implementing the maximum angle limit:
