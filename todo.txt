@@ -1,4 +1,13 @@
 
+- make sound effects and add them. (how does sound work in godot? look at platformer demo)
+	- we will need sound effects for the following things:
+	
+	paddle_hit1 (lower pitched, for paddle 1)
+	paddle_hit2 (higher pitched, for paddle 2)
+	wall_hit
+	block_hit (for breakout mode) (maybe multiple ones, depending on block color?)
+~
+
 #wip#- implement menus. (see doc/planned_features.txt)
 	[x]- make menu cursor move
 	[x]- make control options selectable
@@ -13,13 +22,15 @@
 	[x]- make a 3d logo? "3D Pong", swapping out the word "Pong" for "Breakout" when the player flips the game mode option. (and zooming out, because "Breakout" is longer than "Pong")
 ~
 
+[x]- move "start game" to the top of the main menu! (so you can start the game with default settings by simply pressing A/start!
+
 - check if I can score at least one point against each of the CPUs!
 
 [x]- fix browser mouse controls. (how to check which platform we are running on?) -> with OS.get_name(). mouse capture seems to be broken in HTML5...
 
 - search for "TODO" in all scripts!
 
-- write imperfect paddle AI scripts!
+[x]- write imperfect paddle AI scripts!
 
 #wip#- implement the different InputHandler scripts (see doc/planned_features.txt)
 	[x]- Mouse
@@ -29,9 +40,9 @@
 	[x]- Gamepad1_right_stick (face buttons will also work)
 	[x]- Gamepad2_left_stick  (d-pad will also work)
 	[x]- Gamepad2_right_stick (face buttons will also work)
-	- CPU_weak
-	- CPU_medium
-	- CPU_strong
+	[x]- CPU_weak
+	[x]- CPU_medium
+	[x]- CPU_strong
 	[x]- CPU_perfect
 ~
 
@@ -40,14 +51,6 @@
 
 - make breakout scene & multiple stage subscenes.
 
-- make sound effects and add them. (how does sound work in godot? look at platformer demo)
-	- we will need sound effects for the following things:
-	
-	paddle_hit1 (lower pitched, for paddle 1)
-	paddle_hit2 (higher pitched, for paddle 2)
-	wall_hit
-	block_hit (for breakout mode) (maybe multiple ones, depending on block color?)
-~
 
 [x]- limit maximum angle of the ball to prevent it from taking a long time to reach the other side of the playing field.
 
