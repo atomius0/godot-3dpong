@@ -15,6 +15,8 @@ var velocity = Vector3(0.0, 0.0, START_SPEED) # if init_velocity() is not called
 var rest_timer = 0
 var prev_paddle_col_side = 0 # for preventing the ball from reaching MAX_SPEED instantly when it gets stuck on a paddle's edge.
 
+onready var sound = get_node("SpatialSamplePlayer")
+
 func _ready():
 	#init_velocity()
 	set_fixed_process(true)
@@ -31,6 +33,8 @@ func _fixed_process(delta):
 		var collider = get_collider()
 		#print("Collider: " + collider.get_name())
 		#print("collision_normal: " + str(get_collision_normal()))
+		
+		play_sound(collider)
 		
 		if collider.is_in_group("Paddles"):
 			collider.get_node("AnimationPlayer").play("PaddleFlash")
@@ -124,3 +128,14 @@ func limit_angle(): # wtf... how to do this properly?
 	if (negative):
 		vn.z = -vn.z
 	velocity = vn.normalized() * vlen
+
+
+func play_sound(collider):
+	var name = collider.get_name()
+	
+	if (name == "Paddle1"):
+		sound.play("paddle_hit1")
+	elif (name == "Paddle2"):
+		sound.play("paddle_hit2")
+	else: # wall collision
+		sound.play("wall_hit")
