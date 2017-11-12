@@ -36,11 +36,11 @@ const INPUT_HANDLER_SCRIPTS = [
 	"res://scripts/InputHandler/Gamepad1_right_stick.gd",
 	"res://scripts/InputHandler/Gamepad2_left_stick.gd",
 	"res://scripts/InputHandler/Gamepad2_right_stick.gd",
-	"res://scripts/InputHandler/CPU_weak.gd", #TODO: not implemented!
-	"res://scripts/InputHandler/CPU_medium.gd", #TODO: not implemented!
-	"res://scripts/InputHandler/CPU_strong.gd", #TODO: not implemented!
+	"res://scripts/InputHandler/CPU_weak.gd",
+	"res://scripts/InputHandler/CPU_medium.gd",
+	"res://scripts/InputHandler/CPU_strong.gd",
 	"res://scripts/InputHandler/CPU_perfect.gd"
 ]
 
 var player1_input = InputHandler.MOUSE
-var player2_input = InputHandler.CPU_PERFECT # TODO: change to CPU_WEAK once implemented.
+var player2_input = InputHandler.CPU_WEAK
