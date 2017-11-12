@@ -51,14 +51,15 @@ func _input(event):
 	if move_left:  movement.x -= button_sensitivity
 	if move_right: movement.x += button_sensitivity
 	
-	#if (abs(move_axis_x) > stick_dead_zone):
-	#	movement.x += ( move_axis_x - (stick_dead_zone * sign(move_axis_x)) ) * (1.0 + stick_dead_zone) * stick_sensitivity
-	#if (abs(move_axis_y) > stick_dead_zone):
-	#	movement.y += ( move_axis_y - (stick_dead_zone * sign(move_axis_y)) ) * (1.0 + stick_dead_zone) * stick_sensitivity
+	if (abs(move_axis_x) > stick_dead_zone):
+		movement.x += ( move_axis_x - (stick_dead_zone * sign(move_axis_x)) ) * (1.0 + stick_dead_zone) * stick_sensitivity
+	if (abs(move_axis_y) > stick_dead_zone):
+		movement.y += ( move_axis_y - (stick_dead_zone * sign(move_axis_y)) ) * (1.0 + stick_dead_zone) * stick_sensitivity
 	
-	var stick_movement = handle_dead_zone(move_axis_x, move_axis_y, stick_dead_zone)
-	movement.x += stick_movement.x * stick_sensitivity
-	movement.y += stick_movement.y * stick_sensitivity
+	#var stick_movement = handle_dead_zone(move_axis_x, move_axis_y, stick_dead_zone)
+	#movement.x += stick_movement.x * stick_sensitivity
+	#movement.y += stick_movement.y * stick_sensitivity
+	
 	#print(movement / stick_sensitivity) # testing
 
 
