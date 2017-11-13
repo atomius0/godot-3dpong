@@ -1,6 +1,7 @@
 extends Node
 
 func _ready():
+	set_pause_mode(PAUSE_MODE_PROCESS) # without this, hotkeys won't work when paused!
 	set_process_input(true)
 
 
@@ -12,3 +13,16 @@ func _input(event):
 		
 		if (event.scancode == KEY_F11): # toggle fullscreen
 			OS.set_window_fullscreen(!OS.is_window_fullscreen())
+		
+		elif (event.scancode == KEY_F2): # take a screenshot (KEY_PRINT does not cause an InputEvent...)
+			print("print pressed")
+			print(OS.get_data_dir())
+			get_viewport().queue_screen_capture()
+			
+			var capture = null
+			
+			while (capture == null or capture.empty()):
+				yield(get_tree(), "idle_frame")
+				capture = get_viewport().get_screen_capture()
+			
+			capture.save_png("./screenshot.png")
