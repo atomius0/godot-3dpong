@@ -2,7 +2,9 @@
 plan for version 1.1:
 	[x]- fix analog dead zone (properly this time!):  http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html
 	
-	- add screenshot hotkey
+	[x]- add screenshot hotkey
+	
+	- check which screenshots already exist, and choose another name (numbered) (or with date and time?) (maybe create a screenshot subdir in "user://" first?)
 	
 	- make 1080p screenshots using the hotkey and upload them to itch.io.
 	
@@ -14,7 +16,7 @@ plan for version 1.1:
 		- option for disabling the mouse capture workaround?
 	~
 	
-	- add version label to title screen
+	[x]- add version label to title screen
 ~
 
 -----
