@@ -44,3 +44,7 @@ const INPUT_HANDLER_SCRIPTS = [
 
 var player1_input = InputHandler.MOUSE
 var player2_input = InputHandler.CPU_WEAK
+
+func _ready():
+	if (OS.get_name() == "HTML5"): # default input for HTML5 is arrow keys, since the mouse does not get captured.
+		player1_input = InputHandler.KEYBOARD_ARROWS
