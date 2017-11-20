@@ -16,13 +16,15 @@ func _input(event):
 		
 		elif (event.scancode == KEY_F2): # take a screenshot (KEY_PRINT does not cause an InputEvent...)
 			print("print pressed")
-			print(OS.get_data_dir())
-			get_viewport().queue_screen_capture()
-			
-			var capture = null
-			
-			while (capture == null or capture.empty()):
-				yield(get_tree(), "idle_frame")
-				capture = get_viewport().get_screen_capture()
-			
-			capture.save_png("./screenshot.png")
+			#print(OS.get_data_dir())
+			take_screenshot("./screenshot.png")
+
+
+func take_screenshot(filename):
+	get_viewport().queue_screen_capture()
+	var capture = null
+	while (capture == null or capture.empty()):
+		yield(get_tree(), "idle_frame")
+		capture = get_viewport().get_screen_capture()
+	
+	capture.save_png(filename)
