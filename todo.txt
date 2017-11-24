@@ -4,11 +4,11 @@ plan for version 1.1:
 	
 	[x]- add screenshot hotkey
 	
-	- check which screenshots already exist, and choose another name (numbered) (or with date and time?) (maybe create a screenshot subdir in "user://" first?)
+	[x]- check which screenshots already exist, and choose another name (numbered) (or with date and time?) (maybe create a screenshot subdir in "user://" first?)
 	
 	- make 1080p screenshots using the hotkey and upload them to itch.io.
 	
-	- add preferences file that gets created on first run, containing:
+	#maybe in version 1.2?#- add preferences file that gets created on first run, containing:
 		- stick dead zone (separate for pad 1 and 2?)
 		- mouse sensitivity
 		- gamepad sensitivity (separate for pad 1 and 2!!)
@@ -17,6 +17,8 @@ plan for version 1.1:
 	~
 	
 	[x]- add version label to title screen
+	
+	[x]- change default input in html5 version to keyboard arrows (add a _ready function and check if running in html5 there!)
 ~
 
 -----
